@@ -71,11 +71,10 @@
   </div>
   <div class="form-group col-md-5">
     <label for="provinsi">Provinsi</label>
-    <select id="provinsi" wire:model="provinsi" class="form-control">
+    <select id="provinsi" wire:model="provinsiId" class="form-control">
       <option value="" selected >Pilih...</option>
       @foreach (getProvinsi() as $provinsi)
-            <h2 class="panel-title">{{ $provinsi['nama']}}</h2>
-       
+           
           <option value='{{ $provinsi['id']}}'>{{ $provinsi['nama']}}</option>
       @endforeach
       
@@ -94,6 +93,20 @@
     </select>
     
   </div>
+
+  <div class="form-group col-md-5">
+    <label for="kecamatan">kecamatan</label>
+    <select id="kecamatan" wire:model="kecamatan" class="form-control">
+      <option value="" selected >Pilih...</option>
+      @foreach($kecamatans as $kecamatan)
+          <option value='{{ $kecamatan['id']}}'>{{ $kecamatan['nama']}}</option>
+      @endforeach
+      
+     
+    </select>
+    
+  </div>
+  
   
  
   

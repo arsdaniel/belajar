@@ -13,20 +13,42 @@ class BiodataSantri extends Component
     public $jenis_kelamin, $tempat_lahir, $alamat, $kabupaten, $kode_pos, $sekolah_asal;
     public $foto, $wni, $status,$tgl_lahir, $sekolah_sekarang;
     public $updateMode = false;
-    public $provinsi;
+    public $provinsi, $provinsiId, $kecamatan;
     public $kotas=[];
+    public $kecamatans=[];
 
     
 
     public function render()
     {   
-        if(!empty($this->provinsi)) {
-            $provinsi = $this->provinsi;
-            $this->kotas = getKota($provinsi);
-        }
+       
+        $this->getKota();
+        $this->getKecamatan();
  
         return view('livewire.santri.biodata-santri');
     }
+    public function getKota(){
+        
+         if(!empty($this->provinsiId)) {
+            $provinsi = $this->provinsiId;
+            
+            $this->kotas = getKota($provinsi);
+        }
+
+    }
+
+    public function getKecamatan(){
+        
+        if(!empty($this->kabupaten)) {
+           $kabupaten = $this->kabupaten;
+          
+           
+           $this->kecamatans = getKecamatan($kabupaten);
+       }
+
+   }
+
+   
 
     public function store()
     {
@@ -53,7 +75,7 @@ class BiodataSantri extends Component
             'status' => '1',
             
         ]);
-        $this->resetInput();
+        
     }
 
   

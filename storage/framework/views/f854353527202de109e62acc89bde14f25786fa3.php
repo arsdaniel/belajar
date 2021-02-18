@@ -55,7 +55,7 @@
   <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="sekolah_asal">Nama Sekolah Asal</label>
-                <input type="text" wire:model="sekolah_asal" class="form-control" id="nama_depan" placeholder="NIS">
+                <input type="text" wire:model="sekolah_asal" class="form-control" id="sekolah_asal" placeholder="Isikan sekolah asal anda">
             </div>
             <div class="form-group col-md-6">
             <label for="sekolah_sekarang">Mendaftar Sebagai Santri</label>
@@ -71,11 +71,10 @@
   </div>
   <div class="form-group col-md-5">
     <label for="provinsi">Provinsi</label>
-    <select id="provinsi" wire:model="provinsi" class="form-control">
+    <select id="provinsi" wire:model="provinsiId" class="form-control">
       <option value="" selected >Pilih...</option>
       <?php $__currentLoopData = getProvinsi(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $provinsi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <h2 class="panel-title"><?php echo e($provinsi['nama']); ?></h2>
-       
+           
           <option value='<?php echo e($provinsi['id']); ?>'><?php echo e($provinsi['nama']); ?></option>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       
@@ -94,6 +93,20 @@
     </select>
     
   </div>
+
+  <div class="form-group col-md-5">
+    <label for="kecamatan">kecamatan</label>
+    <select id="kecamatan" wire:model="kecamatan" class="form-control">
+      <option value="" selected >Pilih...</option>
+      <?php $__currentLoopData = $kecamatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kecamatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <option value='<?php echo e($kecamatan['id']); ?>'><?php echo e($kecamatan['nama']); ?></option>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      
+     
+    </select>
+    
+  </div>
+  
   
  
   
