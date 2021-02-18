@@ -1,6 +1,7 @@
  <div class="panel">
     <div class="col-md-12">
 	<div class="panel-heading">
+       
 		<h2 class="panel-title">Lengkapi Biodata Anda</h2>
 	</div>
     </div>
@@ -72,8 +73,10 @@
     <label for="provinsi">Provinsi</label>
     <select id="provinsi" wire:model="provinsi" class="form-control">
       <option value="" selected >Pilih...</option>
-      <?php $__currentLoopData = $listprovinsi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $listprovinsis): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <option value='<?php echo e($listprovinsis['id']); ?>'><?php echo e($listprovinsis['nama']); ?></option>
+      <?php $__currentLoopData = getProvinsi(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $provinsi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <h2 class="panel-title"><?php echo e($provinsi['nama']); ?></h2>
+       
+          <option value='<?php echo e($provinsi['id']); ?>'><?php echo e($provinsi['nama']); ?></option>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       
      

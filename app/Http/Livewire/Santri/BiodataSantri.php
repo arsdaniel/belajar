@@ -16,10 +16,18 @@ class BiodataSantri extends Component
     public $provinsi;
     public $kotas=[];
 
-    private function mount()
-    {
-        
+    
+
+    public function render()
+    {   
+        if(!empty($this->provinsi)) {
+            $provinsi = $this->provinsi;
+            $this->kotas = getKota($provinsi);
+        }
+ 
+        return view('livewire.santri.biodata-santri');
     }
+
     public function store()
     {
         $id = auth()->user()->id;
@@ -52,23 +60,6 @@ class BiodataSantri extends Component
 
     
 
-    public function render()
-    {   
-        $getkota = Http::get('https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi='. $this->provinsi);
-        $ambilkota =  $getkota->json('kota_kabupaten');
-      
-        
-        
-        if(!empty($this->provinsi)) {
-            $this->kotas = $ambilkota;
-       
-         
-        }
-        $respo = Http::get('https://dev.farizdotid.com/api/daerahindonesia/provinsi');
-        $listprovinsi = $respo->json('provinsi');
-        
-        return view('livewire.santri.biodata-santri', compact('listprovinsi'));
-    }
-
+    
     
 }

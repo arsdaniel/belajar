@@ -17,8 +17,8 @@ class CreateBiodataWalisTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->string('nama_depan');
-            $table->string('nama_belakang');
-            $table->string('nama_tengah');
+            $table->string('nama_belakang')->nullable();
+            $table->string('nama_tengah')->nullable();
             $table->string('usia');
             $table->string('pekerjaan');
             $table->string('pendidikan_terakhir');

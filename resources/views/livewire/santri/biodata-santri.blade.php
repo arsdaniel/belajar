@@ -1,6 +1,7 @@
  <div class="panel">
     <div class="col-md-12">
 	<div class="panel-heading">
+       
 		<h2 class="panel-title">Lengkapi Biodata Anda</h2>
 	</div>
     </div>
@@ -72,8 +73,10 @@
     <label for="provinsi">Provinsi</label>
     <select id="provinsi" wire:model="provinsi" class="form-control">
       <option value="" selected >Pilih...</option>
-      @foreach($listprovinsi as $listprovinsis)
-          <option value='{{ $listprovinsis['id']}}'>{{ $listprovinsis['nama']}}</option>
+      @foreach (getProvinsi() as $provinsi)
+            <h2 class="panel-title">{{ $provinsi['nama']}}</h2>
+       
+          <option value='{{ $provinsi['id']}}'>{{ $provinsi['nama']}}</option>
       @endforeach
       
      
