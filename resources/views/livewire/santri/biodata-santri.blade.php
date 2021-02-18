@@ -55,7 +55,7 @@
   <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="sekolah_asal">Nama Sekolah Asal</label>
-                <input type="text" wire:model="sekolah_asal" class="form-control" id="nama_depan" placeholder="NIS">
+                <input type="text" wire:model="sekolah_asal" class="form-control" id="sekolah_asal" placeholder="Isikan sekolah asal anda">
             </div>
             <div class="form-group col-md-6">
             <label for="sekolah_sekarang">Mendaftar Sebagai Santri</label>
