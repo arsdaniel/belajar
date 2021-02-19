@@ -46,4 +46,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function biodatasantris(){
         return $this->hasOne('App\Models\BiodataSantri');
     }
+
+    public function status(){
+        return $this->hasOne('App\Models\StatusUser');
+    }
 }

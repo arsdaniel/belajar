@@ -2,7 +2,7 @@
     <div class="col-md-12">
 	<div class="panel-heading">
        
-		<h2 class="panel-title">Lengkapi Biodata Anda</h2>
+		<h2 class="panel-title">Lengkapi Biodata Anda <?php echo e(Auth::user()->status->status); ?></h2>
 	</div>
     </div>
 	<div class="panel-body">

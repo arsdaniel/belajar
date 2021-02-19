@@ -1,18 +1,29 @@
 <?php
 
 namespace App\Http\Livewire\Santri;
+
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
-    public $response;
+    public $searchTerm;
+    use WithPagination;
+
+    
     public function render()
     {
-        $response = Http::get('https://dev.farizdotid.com/api/daerahindonesia/provinsi');
-        $data = $response->json( 'provinsi');
-        //dd($data);
-        return view('livewire.santri.index',compact('data'));
+        $status = Auth::user()->status->status;
+        
+        $searchTerm ='%'.$this->searchTerm . '%';
+        $santri = User::where('name', 'LIKE', $searchTerm)->orderBy('id', 'DESC')->paginate(10);    
+        return view('livewire.santri.index', [
+            'santris' => $santri,
+            'status' => $status
+        ]);
     }
 }
