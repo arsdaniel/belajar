@@ -2,7 +2,10 @@
 
   @if ($status == 1)
   <livewire:santri.biodata-santri />
-  @else
+  @elseif ($status == 2)
+
+  <livewire:santri.upload-doc />
+  @else 
       
 
  

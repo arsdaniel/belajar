@@ -4,19 +4,36 @@
   <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('santri.biodata-santri', [])->html();
-} elseif ($_instance->childHasBeenRendered('xLIITEO')) {
-    $componentId = $_instance->getRenderedChildComponentId('xLIITEO');
-    $componentTag = $_instance->getRenderedChildComponentTagName('xLIITEO');
+} elseif ($_instance->childHasBeenRendered('SKdpiFM')) {
+    $componentId = $_instance->getRenderedChildComponentId('SKdpiFM');
+    $componentTag = $_instance->getRenderedChildComponentTagName('SKdpiFM');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('xLIITEO');
+    $_instance->preserveRenderedChild('SKdpiFM');
 } else {
     $response = \Livewire\Livewire::mount('santri.biodata-santri', []);
     $html = $response->html();
-    $_instance->logRenderedChild('xLIITEO', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('SKdpiFM', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
-  <?php else: ?>
+  <?php elseif($status == 2): ?>
+
+  <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('santri.upload-doc', [])->html();
+} elseif ($_instance->childHasBeenRendered('aX0baXS')) {
+    $componentId = $_instance->getRenderedChildComponentId('aX0baXS');
+    $componentTag = $_instance->getRenderedChildComponentTagName('aX0baXS');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('aX0baXS');
+} else {
+    $response = \Livewire\Livewire::mount('santri.upload-doc', []);
+    $html = $response->html();
+    $_instance->logRenderedChild('aX0baXS', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
+  <?php else: ?> 
       
 
  

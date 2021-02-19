@@ -111,10 +111,11 @@
                 <option value="WNA">WNA</option>
             </select>
         </div>
-    
-        <div class="form-group col-md-12">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button wire:click="store()" type="submit" class="btn btn-primary">Simpan</button>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button wire:click="store()" type="submit" class="btn btn-primary">Simpan</button>
+                </div>
             </div>
         </div>
         </form>

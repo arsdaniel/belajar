@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Santri;
 
 use App\Models\BiodataSantri as ModelsBiodataSantri;
-use Illuminate\Support\Facades\Http;
+use App\Models\StatusUser;
 use Livewire\Component;
 
 
@@ -53,6 +53,7 @@ class BiodataSantri extends Component
     public function store()
     {
         $id = auth()->user()->id;
+        $idStatus = auth()->user()->status->id;
         ModelsBiodataSantri::create([
             'user_id' => $id,
             'no_pendaftaran'=> 'asdsdff',
@@ -75,7 +76,16 @@ class BiodataSantri extends Component
             'status' => '1',
             
         ]);
+
         
+        $statusUser =  StatusUser::find($idStatus);
+        
+        $statusUser->update([
+            'status' => '2'
+        ]);
+
+
+        return view('livewire.santri.biodata-santri');
     }
 
   
