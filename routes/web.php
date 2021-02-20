@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::group(['middleware' => ['role:santri','permission:santri-baru']], function () {
 			//
 			Route::get('/santri', [HomeController::class, 'index'])->name('santri.home');
+			Route::get('/dashboard', Index::class);
 
 		});
 
@@ -37,6 +38,6 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/show', Show::class);
 Route::get('/biodata', BiodataSantri::class);
-Route::get('/dashboard', Index::class);
+
 
 
