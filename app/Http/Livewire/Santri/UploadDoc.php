@@ -8,7 +8,7 @@ use Livewire\WithFileUploads;
 class UploadDoc extends Component
 {
 
-    public $kk;
+    public $kk, $ijazah ,$spSantri, $spWsantri, $spiQabul;
     use WithFileUploads;
 
     public function render()
