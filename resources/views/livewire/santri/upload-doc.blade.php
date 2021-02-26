@@ -12,50 +12,52 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4">
                                                 <div class="custom-file">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload KK</label>
-                                                    <input type="file" class="custom-file-input" wire:model="kk" id="validatedCustomFile" required>
+                                                    <label class="custom-file-label" for="kk">Upload KK</label>
+                                                    <input type="file" class="custom-file-input" wire:model="kk" id="kk" required>
                                                     
                                                     @error('kk') <div class="invalid-feedback">{{ $message }}</div>@enderror
-                                                    @if ($kk)
-                                                    <img src="{{ $kk->temporaryUrl() }}" class="img-thumbnail" width= "50%" alt="Responsive image" >
-                                                    @endif
+                                                   
                                                 </div>
                                             </div>
                             
                                             <div class="form-group col-md-4">
                                                 <div class="custom-file">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload Ijazah</label>
-                                                    <input type="file" class="custom-file-input" wire:model="ijazah" id="validatedCustomFile" required>
+                                                    <label class="custom-file-label" for="ijazah">Upload Ijazah</label>
+                                                    <input type="file" class="custom-file-input" wire:model="ijazah" id="ijazah" required>
                                                     
                                                     @error('ijazah') <div class="invalid-feedback">{{ $message }}</div>@enderror
-                                                    @if ($ijazah)
-                                                    <img src="{{ $ijazah->temporaryUrl() }}" class="img-thumbnail" width= "50%" alt="Responsive image" >
-                                                    @endif
+                                                   
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-3">
                                                 <div class="custom-file">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload KTP</label>
-                                                    <input type="file" class="custom-file-input" wire:model="sp_santri" id="validatedCustomFile" required>
+                                                    <label class="custom-file-label" for="spSantri">Upload KTP</label>
+                                                    <input type="file" class="custom-file-input" wire:model="spSantri" id="spSantri" required>
                                                     
-                                                    @error('kk') <div class="invalid-feedback">{{ $message }}</div>@enderror
-                                                    @if ($kk)
-                                                    <img src="{{ $kk->temporaryUrl() }}" class="img-thumbnail" width= "50%" alt="Responsive image" >
-                                                    @endif
+                                                    @error('spSantri') <div class="invalid-feedback">{{ $message }}</div>@enderror
+                                                   
                                                 </div>
                                             </div>
                             
                                             <div class="form-group col-md-3">
                                                 <div class="custom-file">
-                                                    <label class="custom-file-label" for="validatedCustomFile">Upload KTP</label>
-                                                    <input type="file" class="custom-file-input" wire:model="kk" id="validatedCustomFile" required>
+                                                    <label class="custom-file-label" for="spWsantri">Upload KTP</label>
+                                                    <input type="file" class="custom-file-input" wire:model="spWsantri" id="spWsantri" required>
                                                     
-                                                    @error('kk') <div class="invalid-feedback">{{ $message }}</div>@enderror
-                                                    @if ($kk)
-                                                    <img src="{{ $kk->temporaryUrl() }}" class="img-thumbnail" width= "50%" alt="Responsive image" >
-                                                    @endif
+                                                    @error('spWsantri') <div class="invalid-feedback">{{ $message }}</div>@enderror
+                                                   
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <div class="custom-file">
+                                                    <label class="custom-file-label" for="spiQabul">Upload KTP</label>
+                                                    <input type="file" class="custom-file-input" wire:model="spiQabul" id="spiQabul" required>
+                                                    
+                                                    @error('spiQabul') <div class="invalid-feedback">{{ $message }}</div>@enderror
+                                                   
                                                 </div>
                                             </div>
                             
