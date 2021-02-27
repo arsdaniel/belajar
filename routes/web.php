@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::group(['middleware' => ['role:santri','permission:santri-baru']], function () {
 			//
 			Route::get('/santri', [HomeController::class, 'index'])->name('santri.home');
-			Route::get('/dashboard', Index::class);
+			Route::get('/dashboard', Index::class)->name('santri.dashboard');
 
 		});
 

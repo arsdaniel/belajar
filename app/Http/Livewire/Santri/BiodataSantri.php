@@ -85,7 +85,9 @@ class BiodataSantri extends Component
         ]);
 
 
-        return view('livewire.santri.index');
+        session()->flash('success', 'Data berhasil Disimpan');
+        return redirect()->route('santri.dashboard');
+
     }
 
   

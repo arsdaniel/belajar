@@ -22,33 +22,55 @@
                   <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Kartu Keluarga
-                      <span class="badge badge-primary badge-pill"> Pilih File
-                        <input type="file" class="custom-file-input" wire:model="kk" id="kk" required>
-                      </span>
-                      <div wire:loading wire:target="kk" class="text-sm text-gray-500 italic">Uploading...</div>
+                      <span class="badge badge-primary"> 
+                        <input type="file"  wire:model="kk" id="kk" required>
                         @error('kk') <div class="error">{{ $message }}</div>@enderror
+                        <div wire:loading wire:target="kk" >Uploading...</div>
+                      </span>
+                     
+                        
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Ijazah
-                      <span class="badge badge-primary badge-pill">Unduh</span>
+                      <span class="badge badge-primary badge-pill">
+                        <input type="file"  wire:model="ijazah" id="ijazah" required>
+                        @error('ijazah') <div class="error">{{ $message }}</div>@enderror
+                        <div wire:loading wire:target="ijazah" >Uploading...</div>
+                      </span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Pernyataan Santri
-                      <span class="badge badge-primary badge-pill">Unduh</span>
+                      <span class="badge badge-primary badge-pill">
+                      <input type="file"  wire:model="spSantri" id="spSantri" required>
+                        @error('spSantri') <div class="error">{{ $message }}</div>@enderror
+                        <div wire:loading wire:target="spSantri" >Uploading...</div>
+                      </span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Pernyataan Wali Santri
-                      <span class="badge badge-primary badge-pill">Unduh</span>
+                      <span class="badge badge-primary badge-pill">
+                        <input type="file"  wire:model="spWsantri" id="spWsantri" required>
+                        @error('spWsantri') <div class="error">{{ $message }}</div>@enderror
+                        <div wire:loading wire:target="spWsantri" >Uploading...</div>
+                      </span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Ijab Qabul
-                      <span class="badge badge-primary badge-pill">Unduh</span>
+                      <span class="badge badge-primary badge-pill">
+                      <input type="file"  wire:model="spiQabul" id="spiQabul" required>
+                        @error('spiQabul') <div class="error">{{ $message }}</div>@enderror
+                        <div wire:loading wire:target="spiQabul" >Uploading...</div>
+                      </span>
                     </li>
                     
                   </ul>
+                <br>
                   <div class="form-group col-md-12">
+                    <div class="text-md-right">
+                      <button type="submit" class="btn btn-lg btn-success ">Simpan Berkas</button>
+                    </div>
                                                
-                    <button type="submit" class="btn btn-primary ">Simpan Berkas</button>
+                 
                  
                 </div>
                 </form>
@@ -65,15 +87,15 @@
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Pernyataan Santri
-                      <span class="badge badge-primary badge-pill">Unduh</span>
+                      <span class="badge badge-warning badge-pill">Unduh</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Pernyataan Wali Santri
-                      <span class="badge badge-primary badge-pill">Unduh</span>
+                      <span class="badge badge-warning badge-pill">Unduh</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Ijab Qabul
-                      <a href="https://www.google.com/search?q=surat+pernyataan&oq=surat+pern&aqs=chrome.1.69i57j0i433j0j0i131i433j0i433l3j0l3.3294j0j7&sourceid=chrome&ie=UTF-8"><span class="badge badge-primary badge-pill">Unduh</span></a>
+                      <a href="https://www.google.com/search?q=surat+pernyataan&oq=surat+pern&aqs=chrome.1.69i57j0i433j0j0i131i433j0i433l3j0l3.3294j0j7&sourceid=chrome&ie=UTF-8"><span class="badge badge-warning badge-pill">Unduh</span></a>
                     </li>
                   </ul>
               </div>
@@ -85,8 +107,4 @@
 
   <script>
     // Add the following code if you want the name of the file appear on select
-    $(".custom-file-input").on("change", function() {
-        var kk = $(this).val().split("\\").pop();
-        $(this).siblings(".custom-file-label").addClass("selected").html(kk);
-        });
-    </script>
+   

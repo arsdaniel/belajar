@@ -77,7 +77,9 @@ class UploadDoc extends Component
         $statusUser->update([
             'status' => '3'
         ]);
-        return view('livewire.santri.index');
+        
+        session()->flash('success', 'Data berhasil Disimpan');
+        return redirect()->route('santri.dashboard');
 
 
         
