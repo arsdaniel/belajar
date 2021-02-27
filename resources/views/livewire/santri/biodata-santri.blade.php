@@ -1,11 +1,10 @@
 <section class="section">
     <div class="section-header">
-      <h1>Page</h1>
+      <h1>Biodata </h1>
       <!-- Breadcrumb -->
       <div class="section-header-breadcrumb">
         <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-        <div class="breadcrumb-item"><a href="#">Parent Page</a></div>
-        <div class="breadcrumb-item">Page</div>
+        <div class="breadcrumb-item"><a href="#">biodata</a></div>
       </div>
     </div>
 
@@ -56,10 +55,12 @@
                 <input type="date" wire:model="tgl_lahir" class="form-control" id="tgl_lahir" placeholder="Tanggal Lahir">
             </div>
         </div>
-        <div class="form-group col-md-12">
+        <div class="form-row">
+            <div class="form-group col-md-12">
             <label for="jenis_kelamin">Jenis Kelamin</label>
             <select id="jenis_kelamin" wire:model="jenis_kelamin" class="form-control">
-                <option selected value="Laki - Laki">Laki - Laki</option>
+                <option value="" selected >Pilih...</option>
+                <option value="Laki - Laki">Laki - Laki</option>
                 <option value="Perempuan">Perempuan</option>
             </select>
         </div>
@@ -71,7 +72,8 @@
             <div class="form-group col-md-6">
                 <label for="sekolah_sekarang">Mendaftar Sebagai Santri</label>
                 <select id="sekolah_sekarang" wire:model="sekolah_sekarang" class="form-control">
-                    <option value="SD" selected>SD</option>
+                <option value="" selected >Pilih...</option>
+                <option value="SD" >SD</option>
                     <option value="SMP">SMP</option>
                     <option value="SMA">SMA</option>
                 </select>
@@ -89,7 +91,7 @@
                 @endforeach
             </select>
         </div>
-        @if (!is_null($provinsiId))
+
         <div class="form-group col-md-5">
             <label for="kabupaten">Kabupaten/Kota</label>
             <select id="kabupaten" wire:model="kabupaten" class="form-control">
@@ -97,11 +99,9 @@
                 @foreach($kotas as $kota)
                     <option value="{{ $kota['id']}}">{{ $kota['nama']}}</option>
                 @endforeach
-                </select>
-            
+            </select>
         </div>
-        @endif
-        @if (!is_null($kabupaten))
+
         <div class="form-group col-md-5">
             <label for="kecamatan">kecamatan</label>
                 <select id="kecamatan" wire:model="kecamatan" class="form-control">
@@ -111,16 +111,23 @@
                 @endforeach
                 </select>
         </div>
-        @endif
-        <div class="form-group col-md-2">
-          <label for="kode_pos">Kode Pos</label>
-          <input type="text" wire:model="kode_pos" class="form-control" id="kode_pos">
+
+        <div class="form-group col-md-5">
+            <label for="kecamatan">kecamatan</label>
+                <select id="kecamatan" wire:model="kecamatan" class="form-control">
+                <option value="" selected >Pilih...</option>
+                @foreach($kecamatans as $kecamatan)
+                    <option value="{{ $kecamatan['id']}}">{{ $kecamatan['nama']}}</option>
+                @endforeach
+                </select>
         </div>
+       
     
         <div class="form-group col-md-12">
             <label for="wni">Kewarganegaraan</label>
             <select id="wni" wire:model="wni" class="form-control">
-                <option value="WNI"selected>WNI</option>
+                <option value="" selected >Pilih...</option>
+                <option value="WNI">WNI</option>
                 <option value="WNA">WNA</option>
             </select>
         </div>

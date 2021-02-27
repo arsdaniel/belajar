@@ -1,12 +1,22 @@
-<div class="panel">
-    <div class="col-md-12">
-	    <div class="panel-heading">
-    		<h2 class="panel-title">Lengkapi Biodata Anda </h2>
-	    </div>
+<section class="section">
+    <div class="section-header">
+      <h1>Biodata </h1>
+      <!-- Breadcrumb -->
+      <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="#">biodata</a></div>
+      </div>
     </div>
 
-    <div class="panel-body">
-        <form>
+    <div class="section-body">
+      
+      <p class="section-lead">
+      <div class="card">
+        <div class="card-header">
+        <h4>Silahkan Input Data anda dengan benar</h4>
+        </div>
+        <div class="card-body">
+      <form>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="nama_depan">Nama Depan</label>
@@ -45,10 +55,12 @@
                 <input type="date" wire:model="tgl_lahir" class="form-control" id="tgl_lahir" placeholder="Tanggal Lahir">
             </div>
         </div>
-        <div class="form-group col-md-12">
+        <div class="form-row">
+            <div class="form-group col-md-12">
             <label for="jenis_kelamin">Jenis Kelamin</label>
             <select id="jenis_kelamin" wire:model="jenis_kelamin" class="form-control">
-                <option selected value="Laki - Laki">Laki - Laki</option>
+                <option value="" selected >Pilih...</option>
+                <option value="Laki - Laki">Laki - Laki</option>
                 <option value="Perempuan">Perempuan</option>
             </select>
         </div>
@@ -60,7 +72,8 @@
             <div class="form-group col-md-6">
                 <label for="sekolah_sekarang">Mendaftar Sebagai Santri</label>
                 <select id="sekolah_sekarang" wire:model="sekolah_sekarang" class="form-control">
-                    <option value="SD" selected>SD</option>
+                <option value="" selected >Pilih...</option>
+                <option value="SD" >SD</option>
                     <option value="SMP">SMP</option>
                     <option value="SMA">SMA</option>
                 </select>
@@ -74,19 +87,19 @@
             <select id="provinsi" wire:model="provinsiId" class="form-control">
                 <option value="" selected >Pilih...</option>
                 <?php $__currentLoopData = getProvinsi(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $provinsi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value='<?php echo e($provinsi['id']); ?>'><?php echo e($provinsi['nama']); ?></option>
+                    <option value="<?php echo e($provinsi['id']); ?>"><?php echo e($provinsi['nama']); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </select>
         </div>
+
         <div class="form-group col-md-5">
             <label for="kabupaten">Kabupaten/Kota</label>
             <select id="kabupaten" wire:model="kabupaten" class="form-control">
                 <option value="" selected >Pilih...</option>
                 <?php $__currentLoopData = $kotas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kota): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value='<?php echo e($kota['id']); ?>'><?php echo e($kota['nama']); ?></option>
+                    <option value="<?php echo e($kota['id']); ?>"><?php echo e($kota['nama']); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </select>
-            
+            </select>
         </div>
 
         <div class="form-group col-md-5">
@@ -94,30 +107,43 @@
                 <select id="kecamatan" wire:model="kecamatan" class="form-control">
                 <option value="" selected >Pilih...</option>
                 <?php $__currentLoopData = $kecamatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kecamatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value='<?php echo e($kecamatan['id']); ?>'><?php echo e($kecamatan['nama']); ?></option>
+                    <option value="<?php echo e($kecamatan['id']); ?>"><?php echo e($kecamatan['nama']); ?></option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </select>
         </div>
-    
-        <div class="form-group col-md-2">
-          <label for="kode_pos">Kode Pos</label>
-          <input type="text" wire:model="kode_pos" class="form-control" id="kode_pos">
+
+        <div class="form-group col-md-5">
+            <label for="kecamatan">kecamatan</label>
+                <select id="kecamatan" wire:model="kecamatan" class="form-control">
+                <option value="" selected >Pilih...</option>
+                <?php $__currentLoopData = $kecamatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kecamatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($kecamatan['id']); ?>"><?php echo e($kecamatan['nama']); ?></option>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </select>
         </div>
+       
     
         <div class="form-group col-md-12">
             <label for="wni">Kewarganegaraan</label>
             <select id="wni" wire:model="wni" class="form-control">
-                <option value="WNI"selected>WNI</option>
+                <option value="" selected >Pilih...</option>
+                <option value="WNI">WNI</option>
                 <option value="WNA">WNA</option>
             </select>
         </div>
         <div class="form-row">
             <div class="form-group col-md-12">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button wire:click="store()" type="submit" class="btn btn-primary">Simpan</button>
+                    <button wire:click="store()" type="submit" class="btn btn-success">Simpan</button>
                 </div>
             </div>
         </div>
         </form>
+        </div>
+      </div>
+           </p>
+      <!-- Your content goes here -->
     </div>
-</div><?php /**PATH C:\xampp\htdocs\fortify\resources\views/livewire/santri/biodata-santri.blade.php ENDPATH**/ ?>
+  </section>
+
+    <?php /**PATH C:\xampp\htdocs\fortify\resources\views/livewire/santri/biodata-santri.blade.php ENDPATH**/ ?>
