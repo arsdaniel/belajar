@@ -1,12 +1,23 @@
-<div class="panel">
-    <div class="col-md-12">
-	    <div class="panel-heading">
-    		<h2 class="panel-title">Lengkapi Biodata Anda </h2>
-	    </div>
+<section class="section">
+    <div class="section-header">
+      <h1>Page</h1>
+      <!-- Breadcrumb -->
+      <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+        <div class="breadcrumb-item"><a href="#">Parent Page</a></div>
+        <div class="breadcrumb-item">Page</div>
+      </div>
     </div>
 
-    <div class="panel-body">
-        <form>
+    <div class="section-body">
+      
+      <p class="section-lead">
+      <div class="card">
+        <div class="card-header">
+        <h4>Silahkan Input Data anda dengan benar</h4>
+        </div>
+        <div class="card-body">
+      <form>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="nama_depan">Nama Depan</label>
@@ -74,31 +85,33 @@
             <select id="provinsi" wire:model="provinsiId" class="form-control">
                 <option value="" selected >Pilih...</option>
                 @foreach (getProvinsi() as $provinsi)
-                    <option value='{{ $provinsi['id']}}'>{{ $provinsi['nama']}}</option>
+                    <option value="{{ $provinsi['id']}}">{{ $provinsi['nama']}}</option>
                 @endforeach
             </select>
         </div>
+        @if (!is_null($provinsiId))
         <div class="form-group col-md-5">
             <label for="kabupaten">Kabupaten/Kota</label>
             <select id="kabupaten" wire:model="kabupaten" class="form-control">
                 <option value="" selected >Pilih...</option>
                 @foreach($kotas as $kota)
-                    <option value='{{ $kota['id']}}'>{{ $kota['nama']}}</option>
+                    <option value="{{ $kota['id']}}">{{ $kota['nama']}}</option>
                 @endforeach
                 </select>
             
         </div>
-
+        @endif
+        @if (!is_null($kabupaten))
         <div class="form-group col-md-5">
             <label for="kecamatan">kecamatan</label>
                 <select id="kecamatan" wire:model="kecamatan" class="form-control">
                 <option value="" selected >Pilih...</option>
                 @foreach($kecamatans as $kecamatan)
-                    <option value='{{ $kecamatan['id']}}'>{{ $kecamatan['nama']}}</option>
+                    <option value="{{ $kecamatan['id']}}">{{ $kecamatan['nama']}}</option>
                 @endforeach
                 </select>
         </div>
-    
+        @endif
         <div class="form-group col-md-2">
           <label for="kode_pos">Kode Pos</label>
           <input type="text" wire:model="kode_pos" class="form-control" id="kode_pos">
@@ -114,10 +127,16 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button wire:click="store()" type="submit" class="btn btn-primary">Simpan</button>
+                    <button wire:click="store()" type="submit" class="btn btn-success">Simpan</button>
                 </div>
             </div>
         </div>
         </form>
+        </div>
+      </div>
+           </p>
+      <!-- Your content goes here -->
     </div>
-</div>
+  </section>
+
+    

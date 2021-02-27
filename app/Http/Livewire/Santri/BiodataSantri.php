@@ -85,7 +85,7 @@ class BiodataSantri extends Component
         ]);
 
 
-        return view('livewire.santri.biodata-santri');
+        return view('livewire.santri.index');
     }
 
   
