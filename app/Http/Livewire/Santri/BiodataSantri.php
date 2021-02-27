@@ -52,12 +52,15 @@ class BiodataSantri extends Component
 
     public function store()
     {
+        $this->validate([
+            'kk' => 'file|mimes:pdf|max:1024', // 1MB Max
+        ]);
         $id = auth()->user()->id;
         $idStatus = auth()->user()->status->id;
         ModelsBiodataSantri::create([
             'user_id' => $id,
             'no_pendaftaran'=> 'asdsdff',
-            'nis'=> $this->nis,
+            'nis'=> 'nis',
             'nisn'=> $this->nisn,
             'no_ijazah' => $this->no_ijazah,
             'nama_depan' => $this->nama_depan,
