@@ -18,8 +18,27 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name',
+        'nama_depan',
+        'nama_tengah',
+        'nama_belakang',
         'email',
+        'no_pendaftaran',
+        'nis',
+        'nisn',
+        'no_ijazah',
+        'jenis_kelamin',
+        'tempat_lahir',
+        'tgl_lahir',
+        'alamat',
+        'kabupaten',
+        'provinsi',
+        'kota',
+        'kelurahan',
+        'kode_pos',
+        'sekolah_asal',
+        'sekolah_sekarang',
+        'foto',
+        'wni',
         'password',
         'status',
     ];
@@ -43,7 +62,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function biodatasantris(){
+    public function biodatasantri(){
         return $this->hasOne('App\Models\BiodataSantri');
     }
 

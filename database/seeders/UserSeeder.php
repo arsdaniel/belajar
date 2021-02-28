@@ -18,7 +18,9 @@ class UserSeeder extends Seeder
     {
         //
         $user = User::create([
-            'name' => 'Daniel',
+            'no_pendaftaran' => 'WS2021020001',
+            'nama_depan' => 'Daniel',
+            'nama_belakang' => 'Ariesta',
             'email' => 'arsdaniel63@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
@@ -34,7 +36,9 @@ class UserSeeder extends Seeder
         $user->givePermissionTo('santri-baru');
 
         $user = User::create([
-            'name' => 'Munir',
+            'no_pendaftaran' => 'WS2021020002',
+            'nama_depan' => 'Misbachoel',
+            'nama_belakang' => 'Munir',
             'email' => 'misbachulmunir@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),

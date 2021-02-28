@@ -15,8 +15,27 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('nama_depan');
+            $table->string('nama_tengah')->nullable();
+            $table->string('nama_belakang')->nullable();
+            $table->string('email')->unique()->unique()->nullable();
+            $table->string('no_pendaftaran')->unique();
+            $table->string('nis')->unique()->nullable();
+            $table->string('nisn')->unique()->nullable();
+            $table->string('no_ijazah')->unique()->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tgl_lahir')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('kabupaten')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kota')->nullable();
+            $table->string('kelurahan')->nullable();
+            $table->string('kode_pos')->nullable();
+            $table->string('sekolah_asal')->nullable();
+            $table->string('sekolah_sekarang')->nullable();
+            $table->string('foto')->nullable();
+            $table->string('wni')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

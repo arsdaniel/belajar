@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\BiodataSantri;
+use App\Models\User;
 use Illuminate\Support\Facades\Http;
 
 function getProvinsi(){
@@ -20,7 +20,7 @@ function getKecamatan($kabupaten){
 
 function getnoPendaftaran(){
     $awal = "WS" . date('Ym');
-    $noUrutAkhir = BiodataSantri::max('no_pendaftaran');
+    $noUrutAkhir = User::max('no_pendaftaran');
     $kode = intval(substr($noUrutAkhir, 8));
     $kodelama = substr($noUrutAkhir,0,8 );
     $no = 1;

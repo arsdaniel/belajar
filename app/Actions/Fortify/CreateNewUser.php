@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
+
 class CreateNewUser implements CreatesNewUsers
 {
     use PasswordValidationRules;
-
+    
     /**
      * Validate and create a newly registered user.
      *
@@ -22,7 +23,12 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
+            'nama_depan' => ['required', 'string', 'max:255'],
+            'nisn' => 'required',
+            'no_ijazah' => 'required',
+            'jenis_kelamin' => 'required',
+            'tempat_lahir' => 'required',
+            'tgl_lahir' => 'required|date_format:Y-m-d|before:2015-01-01|after:1995-01-01',
             'email' => [
                 'required',
                 'string',
@@ -30,13 +36,19 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
-            'password' => $this->passwordRules(),
+           
         ])->validate();
-
+           
         $user = User::create([
-            'name' => $input['name'],
+            'nama_depan' => $input['nama_depan'],
+            'nama_tengah' => $input['nama_tengah'],
+            'nama_belakang' => $input['nama_belakang'],
+            'no_pendaftaran' => getnoPendaftaran(),
             'email' => $input['email'],
-            'password' => Hash::make($input['password']),
+            'password' => Hash::make($input['tgl_lahir']),
+            'jenis_kelamin' => $input['jenis_kelamin'],
+            'sekolah_asal' => $input['sekolah_asal'],
+            'sekolah_sekarang' => $input['sekolah_sekarang'],
         ]);
 
         StatusUser::create([

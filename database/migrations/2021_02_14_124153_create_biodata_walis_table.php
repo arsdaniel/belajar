@@ -15,7 +15,7 @@ class CreateBiodataWalisTable extends Migration
     {
         Schema::create('biodata_walis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users') ->onUpdate('cascade') ->onDelete('cascade');
             $table->string('nama_depan');
             $table->string('nama_belakang')->nullable();
             $table->string('nama_tengah')->nullable();

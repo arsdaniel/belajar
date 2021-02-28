@@ -7,18 +7,18 @@
 
                 <div class="card-body">
                     <?php if(session('resent')): ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo e(__('A fresh verification link has been sent to your email address.')); ?>
+                        <div class="alert alert-primary" role="alert">
+                            <?php echo e(__('E-mail Verifikasi Sudah dikirim ke E-mail Anda')); ?>
 
                         </div>
                     <?php endif; ?>
 
-                    <?php echo e(__('Before proceeding, please check your email for a verification link.')); ?>
+                    <?php echo e(__('Sebelum Login, Silah kan cek Email Anda untuk Verifikasi akun.')); ?>
 
-                    <?php echo e(__('If you did not receive the email')); ?>,
+                   
                     <form class="d-inline" method="POST" action="<?php echo e(route('verification.send')); ?>">
                         <?php echo csrf_field(); ?>
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline"><?php echo e(__('click here to request another')); ?></button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline"><?php echo e(__('Klik disini untuk mengirim ulang')); ?></button>.
                     </form>
                 </div>
             </div>

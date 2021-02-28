@@ -15,7 +15,7 @@ class CreateDocsTable extends Migration
     {
         Schema::create('docs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users') ->onUpdate('cascade') ->onDelete('cascade');
             $table->string('nama_berkas');
             $table->string('alamat_berkas');
             $table->timestamps();

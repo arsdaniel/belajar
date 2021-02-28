@@ -23,7 +23,7 @@
         </style>
         	<?php echo \Livewire\Livewire::styles(); ?>
 
-            <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+           
     </head>
 
     <body>
@@ -56,7 +56,7 @@
         <script src="<?php echo e(asset('admin/stisla/assets/js/scripts.js')); ?>"></script>
         <script src="<?php echo e(asset('admin/stisla/assets/js/custom.js')); ?>"></script>
        
-
+     
         <!-- Page Specific JS File -->
         
         <?php echo \Livewire\Livewire::scripts(); ?>

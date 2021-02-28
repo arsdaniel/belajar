@@ -29,7 +29,10 @@
 										<tbody>
                                         @foreach ($santris as $santri)
 											<tr>
-												<td>{{$santri->name}}</td>
+												<td>{{$santri->alamat}}</td>
+												@if (isset($santri->biodatasantri->id))
+												<td>{{$santri->biodatasantri->nama_depan}}</td>
+												@endif
 												<td>{{$santri->alamat}}</td>
 												<td>{{$santri->created_at}}</td>
 												

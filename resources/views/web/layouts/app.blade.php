@@ -22,7 +22,7 @@
             }
         </style>
         	@livewireStyles
-            <script src="{{asset('js/app.js')}}"></script>
+           
     </head>
 
     <body>
@@ -55,7 +55,7 @@
         <script src="{{ asset('admin/stisla/assets/js/scripts.js') }}"></script>
         <script src="{{ asset('admin/stisla/assets/js/custom.js') }}"></script>
        
-
+     
         <!-- Page Specific JS File -->
         
         @livewireScripts
