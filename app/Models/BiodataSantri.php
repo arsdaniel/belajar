@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class BiodataSantri extends Model
 {
     use HasFactory;
+    protected $table ='biodata_santris';
 
     protected $fillable = [
         'user_id',

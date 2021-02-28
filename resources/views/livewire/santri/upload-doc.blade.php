@@ -1,17 +1,24 @@
 <section class="section">
     <div class="section-header">
       <h1>Card</h1>
+      @if (session()->has('success'))
+      <div class="alert alert-success" role="alert">
+        This is a success alert—check it out!
+      </div>
+    @endif
       <div class="section-header-breadcrumb">
         <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
         <div class="breadcrumb-item"><a href="#">Bootstrap Components</a></div>
-        <div class="breadcrumb-item">Card</div>
+        <div class="breadcrumb-item">Unggah Dokumen</div>
       </div>
     </div>
-
+    
     <div class="section-body">
       </p>
-      <form wire:submit.prevent="save" >
+     
+
       <div class="row">
+
         <div class="col-12 col-md-6 col-lg-8">
             <div class="card card-info">
               <div class="card-header">
@@ -105,6 +112,4 @@
     </div>
   </section>
 
-  <script>
-    // Add the following code if you want the name of the file appear on select
-   
+  

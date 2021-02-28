@@ -9,10 +9,10 @@ use Livewire\Component;
 
 class BiodataSantri extends Component
 {
-    public $no_pendaftaran, $nis, $nisn, $no_ijazah, $nama_depan, $nama_tengah, $nama_belakang;
-    public $jenis_kelamin, $tempat_lahir, $alamat, $kabupaten, $kode_pos, $sekolah_asal;
-    public $foto, $wni, $status,$tgl_lahir, $sekolah_sekarang;
-    public $updateMode = false;
+    public $nisn, $no_ijazah, $nama_depan, $nama_tengah, $nama_belakang;
+    public $jenis_kelamin, $tempat_lahir, $alamat, $kabupaten, $sekolah_asal;
+    public  $wni, $tgl_lahir, $sekolah_sekarang;
+
     public $provinsi, $provinsiId, $kecamatan;
     public $kotas=[];
     public $kecamatans=[];
@@ -53,14 +53,28 @@ class BiodataSantri extends Component
     public function store()
     {
         $this->validate([
-            'kk' => 'file|mimes:pdf|max:1024', // 1MB Max
+            'nama_depan' => 'required',
+            'nisn' => 'required',
+            'no_ijazah' => 'required',
+            'jenis_kelamin' => 'required',
+            'tempat_lahir' => 'required',
+            'tgl_lahir' => 'required',
+            'alamat' => 'required',
+            'provinsiId' => 'required',
+            'sekolah_asal' => 'required',
+            'sekolah_sekarang' => 'required',
+            'wni' => 'required',
+            
         ]);
+
         $id = auth()->user()->id;
         $idStatus = auth()->user()->status->id;
+        $no_pendaftaran = getnoPendaftaran();
+       
         ModelsBiodataSantri::create([
             'user_id' => $id,
-            'no_pendaftaran'=> 'asdsdff',
-            'nis'=> 'nis',
+            'no_pendaftaran'=> $no_pendaftaran,
+            'nis' => '',
             'nisn'=> $this->nisn,
             'no_ijazah' => $this->no_ijazah,
             'nama_depan' => $this->nama_depan,
@@ -71,10 +85,11 @@ class BiodataSantri extends Component
             'tgl_lahir' => $this->tgl_lahir,
             'alamat' => $this->alamat,
             'kabupaten' => $this->kabupaten,
-            'provinsi' => $this->provinsi,
-            'kode_pos' => $this->kode_pos,
+            'provinsi' => $this->provinsiId,
+            'kode_pos' => '',
             'sekolah_asal' => $this->sekolah_asal,
             'sekolah_sekarang' => $this->sekolah_sekarang,
+            'foto' => '',
             'wni' => $this->wni,
             'status' => '1',
             

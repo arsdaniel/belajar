@@ -29,7 +29,7 @@
 										<tbody>
                                         <?php $__currentLoopData = $santris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $santri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 											<tr>
-												<td><?php echo e($santri->biodatasantris->nama_depan); ?> <?php echo e($santri->biodatasantris->nama_belakang); ?></td>
+												<td><?php echo e($santri->name); ?></td>
 												<td><?php echo e($santri->alamat); ?></td>
 												<td><?php echo e($santri->created_at); ?></td>
 												

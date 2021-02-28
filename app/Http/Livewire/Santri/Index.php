@@ -17,7 +17,7 @@ class Index extends Component
     
     public function render()
     {
-        dd(getnoPendaftaran());
+       
         $status = Auth::user()->status->status;
         
         $searchTerm ='%'.$this->searchTerm . '%';

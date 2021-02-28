@@ -23,6 +23,7 @@
         </style>
         	<?php echo \Livewire\Livewire::styles(); ?>
 
+            <script src="<?php echo e(asset('js/app.js')); ?>"></script>
     </head>
 
     <body>

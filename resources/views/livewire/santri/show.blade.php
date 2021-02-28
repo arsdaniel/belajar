@@ -29,7 +29,7 @@
 										<tbody>
                                         @foreach ($santris as $santri)
 											<tr>
-												<td>{{$santri->biodatasantris->nama_depan}} {{$santri->biodatasantris->nama_belakang}}</td>
+												<td>{{$santri->name}}</td>
 												<td>{{$santri->alamat}}</td>
 												<td>{{$santri->created_at}}</td>
 												
