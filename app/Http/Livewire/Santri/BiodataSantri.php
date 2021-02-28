@@ -27,6 +27,31 @@ class BiodataSantri extends Component
  
         return view('livewire.santri.biodata-santri');
     }
+
+    protected $rules = [
+            'nama_depan' => 'required',
+            'nisn' => 'required',
+            'no_ijazah' => 'required',
+            'jenis_kelamin' => 'required',
+            'tempat_lahir' => 'required',
+            'tgl_lahir' => 'required|date_format:Y-m-d|before:2015-01-01|after:1995-01-01',
+            'alamat' => 'required',
+            'provinsiId' => 'required',
+            'sekolah_asal' => 'required',
+            'sekolah_sekarang' => 'required',
+            'wni' => 'required',
+    ];
+
+    protected $messages = [
+        
+        
+    ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function getKota(){
         
          if(!empty($this->provinsiId)) {
@@ -58,7 +83,7 @@ class BiodataSantri extends Component
             'no_ijazah' => 'required',
             'jenis_kelamin' => 'required',
             'tempat_lahir' => 'required',
-            'tgl_lahir' => 'required',
+            'tgl_lahir' => 'required|date_format:Y-m-d|before:2015-01-01|after:1995-01-01',
             'alamat' => 'required',
             'provinsiId' => 'required',
             'sekolah_asal' => 'required',

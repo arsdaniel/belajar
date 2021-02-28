@@ -31,28 +31,55 @@
                       Kartu Keluarga
                       <span class="badge badge-primary"> 
                         <input type="file"  wire:model="kk" id="kk" required>
-                        @error('kk') <div class="error">{{ $message }}</div>@enderror
                         <div wire:loading wire:target="kk" >Uploading...</div>
                       </span>
+                      
                      
                         
                     </li>
+                    @error('kk') 
+                    <li class="list-group-item d-flex justify-content-between align-items-left">???
+                      <span> 
+                    <div class="alert alert-danger">{{ $message }}</div>
+
+                  </span>
+                    </li>
+                    @enderror
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Ijazah
                       <span class="badge badge-primary badge-pill">
                         <input type="file"  wire:model="ijazah" id="ijazah" required>
-                        @error('ijazah') <div class="error">{{ $message }}</div>@enderror
                         <div wire:loading wire:target="ijazah" >Uploading...</div>
                       </span>
                     </li>
+
+                    @error('ijazah') 
+                    <li class="list-group-item d-flex justify-content-between align-items-left">???
+                      <span> 
+                    <div class="alert alert-danger">{{ $message }}</div>
+
+                  </span>
+                    </li>
+                    @enderror
+
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Pernyataan Santri
                       <span class="badge badge-primary badge-pill">
                       <input type="file"  wire:model="spSantri" id="spSantri" required>
-                        @error('spSantri') <div class="error">{{ $message }}</div>@enderror
                         <div wire:loading wire:target="spSantri" >Uploading...</div>
                       </span>
                     </li>
+
+                    @error('spSantri') 
+                    <li class="list-group-item d-flex justify-content-between align-items-left">???
+                      <span> 
+                    <div class="alert alert-danger">{{ $message }}</div>
+
+                  </span>
+                    </li>
+                    @enderror
+
+
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Pernyataan Wali Santri
                       <span class="badge badge-primary badge-pill">
@@ -61,14 +88,33 @@
                         <div wire:loading wire:target="spWsantri" >Uploading...</div>
                       </span>
                     </li>
+
+                    @error('spWsantri') 
+                    <li class="list-group-item d-flex justify-content-between align-items-left">???
+                      <span> 
+                    <div class="alert alert-danger">{{ $message }}</div>
+
+                  </span>
+                    </li>
+                    @enderror
+
+
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Surat Ijab Qabul
                       <span class="badge badge-primary badge-pill">
                       <input type="file"  wire:model="spiQabul" id="spiQabul" required>
-                        @error('spiQabul') <div class="error">{{ $message }}</div>@enderror
                         <div wire:loading wire:target="spiQabul" >Uploading...</div>
                       </span>
                     </li>
+
+                    @error('spiQabul') 
+                    <li class="list-group-item d-flex justify-content-between align-items-left">???
+                      <span> 
+                    <div class="alert alert-danger">{{ $message }}</div>
+
+                  </span>
+                    </li>
+                    @enderror
                     
                   </ul>
                 <br>

@@ -17,6 +17,26 @@ class UploadDoc extends Component
     {
         return view('livewire.santri.upload-doc');
     }
+    protected $rules = [
+        'kk' => 'file|mimes:pdf|max:1024',
+        'ijazah' => 'file|mimes:pdf|max:1024', // 1MB Max
+        'spSantri' => 'file|mimes:pdf|max:1024', // 1MB Max
+        'spWsantri' => 'file|mimes:pdf|max:1024', // 1MB Max
+        'spiQabul' => 'file|mimes:pdf|max:1024', // 1MB Max
+    ];
+
+    protected $messages = [
+        'mimes' => 'File harus dalam format PDF',
+        
+    ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+
+    
 
     public function save()
     {
