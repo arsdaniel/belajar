@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         //
         $user = User::create([
             'no_pendaftaran' => 'WS2021020001',
-            'nama_depan' => 'Daniel',
+            'name' => 'Daniel',
             'nama_belakang' => 'Ariesta',
             'email' => 'arsdaniel63@gmail.com',
             'email_verified_at' => now(),
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
 
         $user = User::create([
             'no_pendaftaran' => 'WS2021020002',
-            'nama_depan' => 'Misbachoel',
+            'name' => 'Misbachoel',
             'nama_belakang' => 'Munir',
             'email' => 'misbachulmunir@gmail.com',
             'email_verified_at' => now(),

@@ -5,13 +5,13 @@
       <!-- sidebar menu -->
       <ul class="sidebar-menu">
         <!-- menu header -->
-        <li class="menu-header">Dashboard</li>
+        <li class="menu-header ">Beranda</li>
         <!-- menu item -->
-        <li >
-          <a href="/dashboard"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+        <li class="{{ Request::routeIs('santri.dashboard') ? 'active' : '' }}">
+          <a href="/dashboard"><i class="fas fa-home"></i><span>Beranda</span></a>
         </li>
-        <li >
-          <a href="/show"><i class="fas fa-fire"></i><span>show</span></a>
+        <li class="{{ Request::routeIs('santri.show') ? 'active' : '' }}">
+          <a href="/show"><i class="fas fa-list-ul"></i><span>show</span></a>
         </li>
       </ul>
        

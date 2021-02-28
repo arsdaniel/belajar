@@ -15,9 +15,9 @@
 
                 <div class="row">
                     <div class="form-group col-4">
-                        <label for="nama_depan">Nama Depan</label>
-                        <input id="nama_depan" type="text" class="form-control @error('nama_depan') is-invalid @enderror" name="nama_depan" value="{{ old('nama_depan') }}" value="{{ old('nama_depan') }}" autofocus="">
-                        @error('nama_depan')
+                        <label for="name">Nama Depan</label>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" value="{{ old('name') }}" autofocus="">
+                        @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>

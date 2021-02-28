@@ -31,7 +31,7 @@
 											<tr>
 												<td>{{$santri->alamat}}</td>
 												@if (isset($santri->biodatasantri->id))
-												<td>{{$santri->biodatasantri->nama_depan}}</td>
+												<td>{{$santri->biodatasantri->name}}</td>
 												@endif
 												<td>{{$santri->alamat}}</td>
 												<td>{{$santri->created_at}}</td>

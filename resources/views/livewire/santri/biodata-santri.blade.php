@@ -20,9 +20,9 @@
         <div class="form-row">
             
             <div class="form-group col-md-4">
-                <label for="nama_depan">Nama Depan</label>
-                <input type="text"  wire:model.debounce.500ms.debounce.500ms="nama_depan" class="form-control @error('nama_depan') is-invalid @enderror" id="nama_depan" name="nama_depan" placeholder="Nama Depan">
-                @error('nama_depan')
+                <label for="name">Nama Depan</label>
+                <input type="text"  wire:model.debounce.500ms.debounce.500ms="name" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Nama Depan">
+                @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
