@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="form-group col-6">
                     <label for="sekolah_asal">Nama Sekolah Asal</label>
-                    <input type="text"name="sekolah_asal" class="form-control @error('sekolah_asal') is-invalid @enderror" id="sekolah_asal" placeholder="Isikan sekolah asal anda">
+                    <input type="text"name="sekolah_asal" value="{{ old('sekolah_asal') }}" class="form-control @error('sekolah_asal') is-invalid @enderror" id="sekolah_asal" placeholder="Isikan sekolah asal anda">
                     @error('sekolah_asal')
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -104,9 +104,9 @@
                     <label for="sekolah_sekarang">Mendaftar Sebagai Santri</label>
                     <select id="sekolah_sekarang" name="sekolah_sekarang" class="form-control @error('sekolah_sekarang') is-invalid @enderror">
                     <option value="" selected >Pilih...</option>
-                    <option value="SD" >SD</option>
-                        <option value="SMP">SMP</option>
-                        <option value="SMA">SMA</option>
+                    <option value="SD" {{ old("sekolah_sekarang") == "SD" ? "selected":"" }} >SD</option>
+                        <option value="SMP" {{ old("sekolah_sekarang") == "SMP" ? "selected":"" }}>SMP</option>
+                        <option value="SMA" {{ old("sekolah_sekarang") == "SMA" ? "selected":"" }}>SMA</option>
                     </select>
                     @error('sekolah_asal')
                         <span class="invalid-feedback">{{ $message }}</span>

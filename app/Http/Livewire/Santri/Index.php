@@ -30,9 +30,9 @@ class Index extends Component
 
     public function edit()
     {
-        $user_id = Auth::user()->id;
-        $User = User::findOrFail($id);
-        $this->user_id = $user_id;
+        // $user_id = Auth::user()->id;
+        // $User = User::findOrFail($id);
+        // $this->user_id = $user_id;
         
     }
 }

@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('content'); ?>
 <div class="container mt-5">
     <div class="row">
@@ -14,16 +15,16 @@
 
                 <div class="row">
                     <div class="form-group col-4">
-                        <label for="nama_depan">Nama Depan</label>
-                        <input id="nama_depan" type="text" class="form-control <?php $__errorArgs = ['nama_depan'];
+                        <label for="name">Nama Depan</label>
+                        <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" name="nama_depan" value="<?php echo e(old('nama_depan')); ?>" value="<?php echo e(old('nama_depan')); ?>" autofocus="">
-                        <?php $__errorArgs = ['nama_depan'];
+unset($__errorArgs, $__bag); ?>" name="name" value="<?php echo e(old('name')); ?>" value="<?php echo e(old('name')); ?>" autofocus="">
+                        <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -220,7 +221,7 @@ unset($__errorArgs, $__bag); ?>
             <div class="row">
                 <div class="form-group col-6">
                     <label for="sekolah_asal">Nama Sekolah Asal</label>
-                    <input type="text"name="sekolah_asal" class="form-control <?php $__errorArgs = ['sekolah_asal'];
+                    <input type="text"name="sekolah_asal" value="<?php echo e(old('sekolah_asal')); ?>" class="form-control <?php $__errorArgs = ['sekolah_asal'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -250,9 +251,9 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
                     <option value="" selected >Pilih...</option>
-                    <option value="SD" >SD</option>
-                        <option value="SMP">SMP</option>
-                        <option value="SMA">SMA</option>
+                    <option value="SD" <?php echo e(old("sekolah_sekarang") == "SD" ? "selected":""); ?> >SD</option>
+                        <option value="SMP" <?php echo e(old("sekolah_sekarang") == "SMP" ? "selected":""); ?>>SMP</option>
+                        <option value="SMA" <?php echo e(old("sekolah_sekarang") == "SMA" ? "selected":""); ?>>SMA</option>
                     </select>
                     <?php $__errorArgs = ['sekolah_asal'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
