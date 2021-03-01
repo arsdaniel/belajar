@@ -11,18 +11,18 @@
     <div class="section-body">
       
       <p class="section-lead">
-      <div class="card">
+      <div class="card card-primary">
         <div class="card-header">
-        <h4>Silahkan Input Data anda dengan benar</h4>
+        <h4>Silahkan Lengkapi data anda</h4>
         </div>
         <div class="card-body">
       <form wire:submit.prevent="store" >
         <div class="form-row">
             
             <div class="form-group col-md-4">
-                <label for="name">Nama Depan</label>
-                <input type="text"  wire:model.debounce.500ms.debounce.500ms="name" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Nama Depan">
-                @error('name')
+                <label for="nama_depan">Nama Depan</label>
+                <input type="text"  wire:model.debounce.500ms.debounce.500ms="nama_depan" class="form-control @error('nama_depan') is-invalid @enderror" id="nama_depan" name="nama_depan" placeholder="Nama Depan">
+                @error('nama_depan')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

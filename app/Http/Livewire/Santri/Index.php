@@ -11,6 +11,7 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
+    public $user_id;
     public $searchTerm;
     use WithPagination;
 
@@ -20,11 +21,18 @@ class Index extends Component
        
         $status = Auth::user()->status->status;
         
-        $searchTerm ='%'.$this->searchTerm . '%';
-        $santri = User::where('name', 'LIKE', $searchTerm)->orderBy('id', 'DESC')->paginate(10);    
+       
         return view('livewire.santri.index', [
-            'santris' => $santri,
+        
             'status' => $status
         ]);
+    }
+
+    public function edit()
+    {
+        $user_id = Auth::user()->id;
+        $User = User::findOrFail($id);
+        $this->user_id = $user_id;
+        
     }
 }
