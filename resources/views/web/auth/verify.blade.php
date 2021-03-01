@@ -1,5 +1,6 @@
 @extends('web.layouts.app2')
 
+
 @section('content')
 <div class="container mt-5">
     <div class="row">
@@ -9,7 +10,7 @@
             </div>
 
             <div class="card card-warning">
-            <div class="card-header"><h4>Verifikasi Email</h4></div>
+            <div class="card-header"><h4 class="text-warning">Verifikasi Email</h4></div>
 
             <div class="card-body">
                         @if (session('resent'))
@@ -18,16 +19,15 @@
                                 
                             </div>
                         @endif
-                        
                         {{ __('Sebelum Melanjutkan Pendaftaran, Silahkan cek Email Anda untuk Verifikasi Email.') }}
                         <br>
+                        <h6>Tidak menerima Email???</h6>
                     
                         <form class="d-inline" method="POST" action="{{ route('verification.send') }}">
                             @csrf
-                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('Klik disini untuk mengirim ulang') }}</button>.
+                            <button type="submit" class="btn btn-warning ">{{ __('Klik Ulang Email') }}</button>
                         </form>
                         
-
 
                     </div>
                 </div>
@@ -36,13 +36,17 @@
                       
                      
                         <div class="author-box-name">
-                          <a href="#">{{ Auth::user()->name}} {{ Auth::user()->nama_belakang}} </a>
+                          <a href="#" class="text-primary mb-2">{{ Auth::user()->name}} {{ Auth::user()->nama_belakang}} </a>
                         </div>
                         
                         <div class="author-box-description">
-                          <p>Informasi Akun Anda:<br>
-                              Email : {{ Auth::user()->email}} <br>
-                                Password : {{ Auth::user()->tgl_lahir}}</p>
+                          <h6>Informasi Akun Anda:</h6>
+                              Email : <a  class="text-danger mb-2">{{ Auth::user()->email}}</a> <br>
+                                Password : <a  class="text-danger mb-2"> {{ Auth::user()->tgl_lahir}} </a><br>
+                                <a  class="text-primary mb-2"> Silahkan Login Menggunakan data diatas</p>
+                        </div>
+                        <div class="text-md-right">
+                            <button  class="btn btn-primary "><a href="/" class="text-light">Kembali ke Beranda</a></button>
                         </div>
                         
                       </div>

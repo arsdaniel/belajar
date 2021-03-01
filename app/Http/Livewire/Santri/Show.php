@@ -12,11 +12,20 @@ class Show extends Component
 {
     public $searchTerm;
     use WithPagination;
+    protected $paginationTheme = 'bootstrap';
     public function render()
     {
         
         $searchTerm ='%'.$this->searchTerm . '%';
-        $santri = User::where('name', 'LIKE', $searchTerm)->orderBy('id', 'DESC')->paginate(10);    
+        $santri = User::whereHas('status', function($q) use ($searchTerm){
+                        $q->where('name', 'LIKE', $searchTerm);
+                        })
+                        ->with('status', function($q){
+                            $q->where('status', '=','1');
+                        })
+                        ->orderBy('id', 'DESC')
+                        ->paginate(10);  
+                        
         return view('livewire.santri.show', [
             'santris' => $santri
         ]);

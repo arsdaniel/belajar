@@ -7,7 +7,7 @@
             </div>
 
             <div class="card card-warning">
-            <div class="card-header"><h4>Verifikasi Email</h4></div>
+            <div class="card-header"><h4 class="text-warning">Verifikasi Email</h4></div>
 
             <div class="card-body">
                         <?php if(session('resent')): ?>
@@ -17,17 +17,16 @@
                                 
                             </div>
                         <?php endif; ?>
-                        
                         <?php echo e(__('Sebelum Melanjutkan Pendaftaran, Silahkan cek Email Anda untuk Verifikasi Email.')); ?>
 
                         <br>
+                        <h6>Tidak menerima Email???</h6>
                     
                         <form class="d-inline" method="POST" action="<?php echo e(route('verification.send')); ?>">
                             <?php echo csrf_field(); ?>
-                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline"><?php echo e(__('Klik disini untuk mengirim ulang')); ?></button>.
+                            <button type="submit" class="btn btn-warning "><?php echo e(__('Klik Ulang Email')); ?></button>
                         </form>
                         
-
 
                     </div>
                 </div>
@@ -36,13 +35,17 @@
                       
                      
                         <div class="author-box-name">
-                          <a href="#"><?php echo e(Auth::user()->name); ?> <?php echo e(Auth::user()->nama_belakang); ?> </a>
+                          <a href="#" class="text-primary mb-2"><?php echo e(Auth::user()->name); ?> <?php echo e(Auth::user()->nama_belakang); ?> </a>
                         </div>
                         
                         <div class="author-box-description">
-                          <p>Informasi Akun Anda:<br>
-                              Email : <?php echo e(Auth::user()->email); ?> <br>
-                                Password : <?php echo e(Auth::user()->tgl_lahir); ?></p>
+                          <h6>Informasi Akun Anda:</h6>
+                              Email : <a  class="text-danger mb-2"><?php echo e(Auth::user()->email); ?></a> <br>
+                                Password : <a  class="text-danger mb-2"> <?php echo e(Auth::user()->tgl_lahir); ?> </a><br>
+                                <a  class="text-primary mb-2"> Silahkan Login Menggunakan data diatas</p>
+                        </div>
+                        <div class="text-md-right">
+                            <button  class="btn btn-primary "><a href="/" class="text-light">Kembali ke Beranda</a></button>
                         </div>
                         
                       </div>
