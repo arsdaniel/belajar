@@ -21,10 +21,11 @@ class Show extends Component
                         $q->where('name', 'LIKE', $searchTerm);
                         })
                         ->with('status', function($q){
-                            $q->where('status', '=','1');
+                            $q->where('status', '==','10');
                         })
                         ->orderBy('id', 'DESC')
                         ->paginate(10);  
+                        dd($santri);
                         
         return view('livewire.santri.show', [
             'santris' => $santri

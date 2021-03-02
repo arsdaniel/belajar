@@ -45,13 +45,7 @@
 										<td>
 											@if ( $santri->status->status == '1')
 											<a class="btn btn-sm btn-light text-primary">Isi Biodata</a>	
-											@elseif ( $santri->status->status == '2')
-											<a class="btn btn-sm btn-info text-light"> Upload Dokumen
-											@elseif ( $santri->status->status == '3')
-											<a class="btn btn-sm btn-danger text-light">Menunggu Konfirmasi
-											@elseif ( $santri->status->status == '4')
-											@elseif ( $santri->status->status == '5')
-											@elseif ( $santri->status->status == '6')
+											
 											@endif
 											
 										

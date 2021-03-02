@@ -25,7 +25,7 @@
                     
                         <form class="d-inline" method="POST" action="{{ route('verification.send') }}">
                             @csrf
-                            <button type="submit" class="btn btn-warning ">{{ __('Klik Ulang Email') }}</button>
+                            <button type="submit" class="btn btn-warning ">{{ __('Kirim Ulang Email') }}</button>
                         </form>
                         
 
