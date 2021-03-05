@@ -13,6 +13,9 @@
         <li class="{{ Request::routeIs('santri.show') ? 'active' : '' }}">
           <a href="/show"><i class="fas fa-list-ul"></i><span>show</span></a>
         </li>
+        <li class="{{ Request::routeIs('blog.Category') ? 'active' : '' }}">
+          <a href="/category"><i class="fas fa-times"></i><span>Kategori</span></a>
+        </li>
       </ul>
        
 </aside>
