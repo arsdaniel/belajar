@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Livewire\Admin\Blog\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::group(['as' => 'admin.'], function() {
 
 		Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 		Route::get('/', [HomeController::class, 'index'])->name('home');
+		Route::get('/blog/kategori', Category::class)->name('blog.category');
 
 	});
 

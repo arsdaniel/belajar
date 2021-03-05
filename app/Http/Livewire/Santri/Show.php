@@ -29,6 +29,6 @@ class Show extends Component
                         
         return view('livewire.santri.show', [
             'santris' => $santri
-        ]);
+        ])->layout('layouts.dashboard.dashboard');
     }
 }

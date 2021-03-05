@@ -29,7 +29,10 @@
     <body>
         <div id="app">
             <div class="main-wrapper">
-                <?php echo $__env->make('web.shared.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php if(auth()->check() && auth()->user()->hasRole('admin')): ?> 
+                    <?php echo $__env->make('web.shared.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php endif; ?>
+                
                 <div class="main-sidebar">
                     <?php echo $__env->make('web.shared.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </div>

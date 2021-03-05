@@ -25,7 +25,7 @@ class Index extends Component
         return view('livewire.santri.index', [
         
             'status' => $status
-        ]);
+        ])->layout('layouts.dashboard.dashboard');
     }
 
     public function edit()

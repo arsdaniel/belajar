@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/show', Show::class)->name('santri.show');
 Route::get('/biodata', BiodataSantri::class);
-Route::get('/category', Category::class)->name('blog.category');
+Route::get('/kategori', Category::class)->name('blog.category');
 
 
 

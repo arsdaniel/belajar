@@ -15,7 +15,7 @@ class UploadDoc extends Component
 
     public function render()
     {
-        return view('livewire.santri.upload-doc');
+        return view('livewire.santri.upload-doc')->layout('layouts.dashboard.dashboard');
     }
     protected $rules = [
         'kk' => 'file|mimes:pdf|max:1024',
