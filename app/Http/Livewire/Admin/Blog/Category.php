@@ -28,7 +28,7 @@ class Category extends Component
 
         $this->data['categories'] = $this->getCategories($request);
         $this->data['nestedCategories'] = $this->categoryRepository->findNestedList();
-        return view('livewire.admin.blog.category',$this->data);
+        return view('livewire.admin.blog.category',$this->data)->layout('layouts.dashboard.app');
     }
 
     private function getCategories($request = null)

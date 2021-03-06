@@ -3,10 +3,9 @@
 namespace App\Http\Livewire\Santri;
 
 use App\Models\User;
-use App\Models\BiodataSantri;
 use Livewire\Component;
 use Livewire\WithPagination;
-
+use PhpParser\Node\Expr\FuncCall;
 
 class Show extends Component
 {
@@ -17,18 +16,21 @@ class Show extends Component
     {
         
         $searchTerm ='%'.$this->searchTerm . '%';
-        $santri = User::whereHas('status', function($q) use ($searchTerm){
-                        $q->where('name', 'LIKE', $searchTerm);
-                        })
-                        ->with('status', function($q){
-                            $q->where('status', '==','10');
-                        })
+        $santri = User::where(function ($query) use ($searchTerm){
+                        $query->where ('name', 'LIKE', $searchTerm)
+                        ->orwhere('nama_belakang', 'LIKE', $searchTerm);
+                        })->where(function ($query){
+                        $query->where('status', 1 )->orwhere('status', 2 );})
                         ->orderBy('id', 'DESC')
                         ->paginate(10);  
-                        dd($santri);
+                     
                         
         return view('livewire.santri.show', [
             'santris' => $santri
-        ])->layout('layouts.dashboard.dashboard');
+        ])->layout('layouts.dashboard.app');
+    }
+
+    public function updatingSearchTerm(){
+        $this->resetPage();
     }
 }

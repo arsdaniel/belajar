@@ -16,12 +16,23 @@
                     <div class="card-header">
                         <h4>Manjemen Blog Kategori</h4>
                     </div>
-					<div class="col-md-4">
-							<input type="text" class="form-control" placeholder="cari....." wire:model.debounce.1000ms='searchTerm'>
-					</div>
+					
 					
                     <div class="card-body">
-                     <div class="table-responsive">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                                <input type="text" class="form-control" placeholder="cari....." wire:model.debounce.1000ms='searchTerm'>
+                        </div>
+                        <div class="form-group col-md-2">
+            <input type="text" name="start_date" class="form-control datepicker" id="start_date" placeholder="Start date" value="{{ !empty($filter['start_date']) ? $filter['start_date'] : '' }}">
+        </div>
+        <div class="form-group col-md-2">
+            <input type="text" name="end_date" class="form-control datepicker" id="end_date" placeholder="End date" value="{{ !empty($filter['end_date']) ? $filter['end_date'] : '' }}">
+        </div>
+                        <div class="form-group col-md-3">
+                            <a href="{{ url('admin/kategori/create') }}" class="btn btn-block btn-icon icon-left btn-success btn-filter"><i class="fas fa-plus-circle"></i> Tambah Kategori</a>
+                        </div>
+                    </div>
                             <table class="table table-bordered table-striped table-md">
                                 <thead>
                                     <th>Kategori</th>

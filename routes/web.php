@@ -5,7 +5,6 @@ use App\Http\Controllers\Web\HomeController;
 use App\Http\Livewire\Santri\BiodataSantri;
 use App\Http\Livewire\Santri\Index;
 use App\Http\Livewire\Santri\Show;
-use App\Http\Livewire\Blog\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,9 +36,7 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/show', Show::class)->name('santri.show');
 Route::get('/biodata', BiodataSantri::class);
-Route::get('/kategori', Category::class)->name('blog.category');
 
 
 

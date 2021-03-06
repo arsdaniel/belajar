@@ -34,18 +34,22 @@
                                     <th>Aksi</th>
                                 </thead>
                                 <tbody>
+                                
                                     @forelse ($santris as $santri)
 									
 									<tr>
+										
 										<td>{{$santri->no_pendaftaran}} </td>
 										<td>{{$santri->name}} {{$santri->nama_belakang}}</td>
 										
 										<td>{{$santri->alamat}}</td>
 										<td>{{$santri->tempat_lahir}}, {{$santri->tgl_lahir}}</td>
 										<td>
-											@if ( $santri->status->status == '1')
+											@if ( $santri->status == '1')
 											<a class="btn btn-sm btn-light text-primary">Isi Biodata</a>	
-											
+											@elseif( $santri->status == '2')
+											<a class="btn btn-sm btn-light text-success">Upload Doc</a>	
+
 											@endif
 											
 										

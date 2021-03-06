@@ -25,7 +25,7 @@ class BiodataSantri extends Component
         $this->getKota();
         $this->getKecamatan();
  
-        return view('livewire.santri.biodata-santri');
+        return view('livewire.santri.biodata-santri')->layout('layouts.dashboard.app');
     }
 
     protected $rules = [

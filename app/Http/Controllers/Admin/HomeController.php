@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        return "redirect('/admin/dashboard');";
     }
 }

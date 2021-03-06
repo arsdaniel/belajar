@@ -38,6 +38,8 @@ class CreateUsersTable extends Migration
             $table->string('wni')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('status')->default('1');
+            $table->string('sekolah')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

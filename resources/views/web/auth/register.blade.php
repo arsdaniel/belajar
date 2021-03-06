@@ -1,4 +1,4 @@
-@extends('web.layouts.app2')
+@extends('layouts.auth')
 @section('content')
 <div class="container mt-5">
     <div class="row">
@@ -7,7 +7,7 @@
         </div>
 
         <div class="card card-primary">
-          <div class="card-header"><h4>Formulir Pendaftaran</h4></div>
+          <div class="card-header"><h4>Formulir Pendaftaran Santri Baru </h4></div>
 
           <div class="card-body">
             <form method="POST" action="{{ route('register') }}">
