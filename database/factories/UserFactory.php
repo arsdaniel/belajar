@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'no_pendaftaran' => Str::random(5),
             'alamat' => 'Pontianak',
             'sekolah_sekarang' => 'SMA',
-            'status' => '5',
+            'status' => '7',
             'email_verified_at' => now(),
             'password' => Hash::make('password'), // password
             'remember_token' => Str::random(10),

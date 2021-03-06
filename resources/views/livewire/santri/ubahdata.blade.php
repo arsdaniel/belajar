@@ -20,9 +20,9 @@
         <div class="form-row">
             
             <div class="form-group col-md-4">
-                <label for="nama_depan">Nama Depan</label>
-                <input type="text"  wire:model.debounce.500ms.debounce.500ms="nama_depan" class="form-control @error('nama_depan') is-invalid @enderror" id="nama_depan" name="nama_depan" placeholder="Nama Depan">
-                @error('nama_depan')
+                <label for="name">Nama Depan</label>
+                <input type="text"  wire:model.debounce.500ms="name" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Nama Depan">
+                @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="tgl_lahir">Tanggal Lahir</label>
-                <input type="date"  wire:model.debounce.500ms="tgl_lahir" name="" class="form-control @error('tgl_lahir') is-invalid @enderror" id="tgl_lahir" placeholder="Tanggal Lahir">
+                <input type="date"  wire:model.debounce.500ms="tgl_lahir" name="" class="form-control  @error('tgl_lahir') is-invalid @enderror" id="tgl_lahir" placeholder="Tanggal Lahir">
                 @error('tgl_lahir')
                     <span class="invalid-feedback">{{ $message }}</span>
                 @enderror
@@ -106,7 +106,46 @@
                     <span class="invalid-feedback">{{ $message }}</span>
                 @enderror
             </div>
-   
+        <div class="form-group col-md-5">
+            <label for="provinsiId">Provinsi</label>
+            <select id="provinsiId"  wire:model.debounce.500ms="provinsiId" name="" class="form-control @error('provinsiId') is-invalid @enderror">
+                <option value="" selected >Pilih...</option>
+                @foreach (getProvinsi() as $provinsi)
+                    <option value="{{ $provinsi['id']}}">{{ $provinsi['nama']}}</option>
+                @endforeach
+            </select>
+            @error('provinsiId')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+        </div>
+
+        <div class="form-group col-md-5">
+            <label for="kabupaten">Kabupaten/Kota</label>
+            <select id="kabupaten"  wire:model.debounce.500ms="kabupaten" class="form-control @error('kabupaten') is-invalid @enderror">
+                <option value="" selected >Pilih...</option>
+                @foreach($kotas as $kota)
+                    <option value="{{ $kota['id']}}">{{ $kota['nama']}}</option>
+                @endforeach
+            </select>
+            @error('kabupaten')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+        </div>
+
+        <div class="form-group col-md-5">
+            <label for="kecamatan">kecamatan</label>
+                <select id="kecamatan"  wire:model.debounce.500ms="kecamatan" class="form-control @error('kecamatan') is-invalid @enderror">
+                <option value="" selected >Pilih...</option>
+                @foreach($kecamatans as $kecamatan)
+                    <option value="{{ $kecamatan['id']}}">{{ $kecamatan['nama']}}</option>
+                @endforeach
+                </select>
+                @error('kecamatan')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+        </div>
+
+       
        
     
         <div class="form-group col-md-12">

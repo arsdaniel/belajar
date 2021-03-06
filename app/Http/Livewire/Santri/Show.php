@@ -20,8 +20,10 @@ class Show extends Component
                         $query->where ('name', 'LIKE', $searchTerm)
                         ->orwhere('nama_belakang', 'LIKE', $searchTerm);
                         })->where(function ($query){
-                        $query->where('status', 1 )->orwhere('status', 2 );})
-                        ->orderBy('id', 'DESC')
+                        $query->where('status', 1 )
+                        ->orwhere('status', 2 )
+                        ->orwhere('status', 3 );})
+                        ->orderBy('status', 'DESC')
                         ->paginate(10);  
                      
                         

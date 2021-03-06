@@ -34,24 +34,22 @@
                                     <th>Aksi</th>
                                 </thead>
                                 <tbody>
+                                
                                     <?php $__empty_1 = true; $__currentLoopData = $santris; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $santri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
 									
 									<tr>
+										
 										<td><?php echo e($santri->no_pendaftaran); ?> </td>
 										<td><?php echo e($santri->name); ?> <?php echo e($santri->nama_belakang); ?></td>
 										
 										<td><?php echo e($santri->alamat); ?></td>
 										<td><?php echo e($santri->tempat_lahir); ?>, <?php echo e($santri->tgl_lahir); ?></td>
 										<td>
-											<?php if( $santri->status->status == '1'): ?>
+											<?php if( $santri->status == '1'): ?>
 											<a class="btn btn-sm btn-light text-primary">Isi Biodata</a>	
-											<?php elseif( $santri->status->status == '2'): ?>
-											<a class="btn btn-sm btn-info text-light"> Upload Dokumen
-											<?php elseif( $santri->status->status == '3'): ?>
-											<a class="btn btn-sm btn-danger text-light">Menunggu Konfirmasi
-											<?php elseif( $santri->status->status == '4'): ?>
-											<?php elseif( $santri->status->status == '5'): ?>
-											<?php elseif( $santri->status->status == '6'): ?>
+											<?php elseif( $santri->status == '2'): ?>
+											<a class="btn btn-sm btn-light text-success">Upload Doc</a>	
+
 											<?php endif; ?>
 											
 										

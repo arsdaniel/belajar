@@ -1,9 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\dashboard;
 use App\Http\Livewire\Admin\Blog\Category;
-use App\Http\Livewire\Admin\Index;
 use App\Http\Livewire\Santri\Show;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +22,7 @@ Route::group(['as' => 'admin.'], function() {
 	Route::group(['middleware' => 'auth:admin'], function() {
 
 		Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-		Route::get('/', Index::class)->name('home');
+		Route::get('/', [dashboard::class, 'index'])->name('home');
 		Route::get('/blog/kategori', Category::class)->name('blog.category');
 		Route::get('/santri/lihat', Show::class)->name('admin.santri.show');
 

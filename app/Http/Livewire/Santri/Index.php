@@ -21,7 +21,7 @@ class Index extends Component
        
         $status = Auth::user()->status;
         
-        if
+  
        
         return view('livewire.santri.index', [
         

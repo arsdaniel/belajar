@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\Santri\Dashboard;
 use App\Http\Controllers\Web\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Livewire\Santri\BiodataSantri;
-use App\Http\Livewire\Santri\Index;
 use App\Http\Livewire\Santri\Show;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::group(['middleware' => ['role:santri','permission:santri-baru']], function () {
 			//
 			Route::get('/santri', [HomeController::class, 'index'])->name('santri.home');
-			Route::get('/dashboard', Index::class)->name('santri.dashboard');
+			Route::get('/dashboard', [Dashboard::class, 'index'])->name('santri.dashboard');
 
 		});
 

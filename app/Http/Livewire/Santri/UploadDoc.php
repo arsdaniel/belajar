@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Santri;
 
 use App\Models\Doc;
-use App\Models\StatusUser;
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -49,7 +49,6 @@ class UploadDoc extends Component
             'spiQabul' => 'file|mimes:pdf|max:1024', // 1MB Max
         ]);
         $user = auth()->user()->id;
-        $idStatus = auth()->user()->status->id;
         $nkk = md5($this->kk . microtime()).'.'.$this->kk->extension();
         $nijazah = md5($this->ijazah . microtime()).'.'.$this->ijazah->extension();
         $nspsantri = md5($this->spSantri . microtime()).'.'.$this->spSantri->extension();
@@ -92,7 +91,7 @@ class UploadDoc extends Component
             'alamat_berkas' => $nspijab,
         ]);
 
-        $statusUser =  StatusUser::find($idStatus);
+        $statusUser =  User::find($user);
         
         $statusUser->update([
             'status' => '3'
