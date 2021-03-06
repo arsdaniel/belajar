@@ -19,13 +19,14 @@ class Index extends Component
     public function render()
     {
        
-        $status = Auth::user()->status->status;
+        $status = Auth::user()->status;
         
+        if
        
         return view('livewire.santri.index', [
         
             'status' => $status
-        ])->layout('layouts.dashboard.dashboard');
+        ])->layout('layouts.dashboard.app');
     }
 
     public function edit()
