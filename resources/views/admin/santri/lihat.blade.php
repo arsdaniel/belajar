@@ -13,7 +13,10 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-lg-7">
             @livewire('admin.santri.profile', ['user' => $user], key($user->id))
+
             </div>
+            @livewire('admin.santri.berkas', ['user' => $user], key($user->id))
+
         </div> 
     </div>
   </section>

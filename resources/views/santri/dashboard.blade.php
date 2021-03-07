@@ -29,9 +29,9 @@
                     
                     <div class="author-box-description">
                       <h6>Informasi Akun Anda:</h6>
-                          Email : <a  class="text-danger mb-2">{{ Auth::user()->email}}</a> <br>
-                            Password : <a  class="text-danger mb-2"> {{ Auth::user()->tgl_lahir}} </a><br>
-                            Status Pendaftaran : <a  class="text-warning mb-2"> Menunggu Konfirmasi Admin </a><br>
+                          Email : <a  class="text-primary mb-3">{{ Auth::user()->email}}</a> <br>
+                            Password : <a  class="text-primary mb-3"> {{ Auth::user()->tgl_lahir}} </a><br>
+                            Status Pendaftaran : <a  class="text-warning mb-2"> <h6>Berkas Sedang di Evaluasi Admin</h6> </a><br>
                            
                     </div>
                    

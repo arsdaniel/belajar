@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Profile extends Component
 {
-    public $name, $email, $nama_tengah, $nama_belakang, $alamat ;
+    public $name, $email, $nama_tengah, $nama_belakang, $alamat;
     
     public function mount($user)
     {
@@ -21,4 +21,6 @@ class Profile extends Component
 
         return view('livewire.admin.santri.profile');
     }
+
+    
 }

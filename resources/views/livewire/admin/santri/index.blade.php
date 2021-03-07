@@ -45,10 +45,9 @@
 										<td>{{$santri->alamat}}</td>
 										<td>{{$santri->tempat_lahir}}, {{$santri->tgl_lahir}}</td>
 										<td>
-											@if ( $santri->status == '1')
-											<a class="btn btn-sm btn-light text-primary">Isi Biodata</a>	
-											@elseif( $santri->status == '2')
-											<a class="btn btn-sm btn-light text-success">Upload Doc</a>	
+											@if ( $santri->status == '7' )
+											<a class="btn btn-sm btn-light text-primary">Santri</a>	
+												
 
 											@endif
 											
