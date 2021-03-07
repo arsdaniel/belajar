@@ -10,7 +10,7 @@
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-blog"></i><span>Calon Santri</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link {{ Request::routeIs('blog.Category') ? 'active' : '' }}" href="/admin/santri/lihat">Daftar Santri</a></li>
+            <li><a class="nav-link {{ Request::routeIs('admin.santri.lihat') ? 'active' : '' }}" href="/admin/santri/">Daftar Santri</a></li>
             <li><a class="nav-link" href="/kategori">Update</a></li>
           </ul>
         </li>

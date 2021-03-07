@@ -56,7 +56,7 @@
 										
 										</td>
                                         <td>
-                                           <a class="btn btn-sm btn-info" href="{{ url('admin/santri/'. $santri->id)}}"><i class="far fa-eye"></i> Lihat </a>
+                                           <a class="btn btn-sm btn-info" href="{{ url('admin/santri/edit/'. $santri->id)}}"><i class="far fa-eye"></i> Lihat </a>
 										</td>
                                     </tr>
                                     @empty

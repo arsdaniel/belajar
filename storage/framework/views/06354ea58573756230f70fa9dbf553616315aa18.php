@@ -56,7 +56,7 @@
 										
 										</td>
                                         <td>
-                                           <a class="btn btn-sm btn-info" href="<?php echo e(url('admin/santri/'. $santri->id)); ?>"><i class="far fa-eye"></i> Lihat </a>
+                                           <a class="btn btn-sm btn-info" href="<?php echo e(url('admin/santri/edit/'. $santri->id)); ?>"><i class="far fa-eye"></i> Lihat </a>
 										</td>
                                     </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

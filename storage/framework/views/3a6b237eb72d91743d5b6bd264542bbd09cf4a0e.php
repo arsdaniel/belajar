@@ -7,7 +7,7 @@
         </div>
 
         <div class="card card-primary">
-          <div class="card-header"><h4>Formulir Pendaftaran</h4></div>
+          <div class="card-header"><h4>Formulir Pendaftaran Santri Baru </h4></div>
 
           <div class="card-body">
             <form method="POST" action="<?php echo e(route('register')); ?>">
@@ -288,4 +288,4 @@ unset($__errorArgs, $__bag); ?>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('web.layouts.app2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\fortify\resources\views/web/auth/register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\fortify\resources\views/web/auth/register.blade.php ENDPATH**/ ?>

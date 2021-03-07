@@ -1,3 +1,6 @@
+
+
+
 <?php $__env->startSection('content'); ?>
 <div class="container mt-5">
     <div class="row">
@@ -24,7 +27,7 @@
                     
                         <form class="d-inline" method="POST" action="<?php echo e(route('verification.send')); ?>">
                             <?php echo csrf_field(); ?>
-                            <button type="submit" class="btn btn-warning "><?php echo e(__('Klik Ulang Email')); ?></button>
+                            <button type="submit" class="btn btn-warning "><?php echo e(__('Kirim Ulang Email')); ?></button>
                         </form>
                         
 
@@ -51,7 +54,7 @@
                       </div>
                     </div>
                   
-            </div>
+                </div>
             
             
         </div>
@@ -62,4 +65,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('web.layouts.app2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\fortify\resources\views/web/auth/verify.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\fortify\resources\views/web/auth/verify.blade.php ENDPATH**/ ?>

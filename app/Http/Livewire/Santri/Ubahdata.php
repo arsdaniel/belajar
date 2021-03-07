@@ -124,7 +124,7 @@ class Ubahdata extends Component
         $User = User::find($id);
         
         $User->update([
-            'nis' => '',
+            
             'nisn'=> $this->nisn,
             'no_ijazah' => $this->no_ijazah,
             'name' => $this->name,
