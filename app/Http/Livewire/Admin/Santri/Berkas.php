@@ -19,4 +19,11 @@ class Berkas extends Component
     {
         return view('livewire.admin.santri.berkas');
     }
+
+    public function savekonfirmasi($konfirmasi){
+        if ($konfirmasi == '1'){
+            
+        }
+
+    }
 }
