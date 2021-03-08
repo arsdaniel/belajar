@@ -6,18 +6,15 @@
       </div>
       <div class="card-body">
             <ul class="list-group">
+                 @forelse ($doc as $doc)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                Surat Pernyataan Santri
-                <span class="badge badge-warning badge-pill">Unduh</span>
+                {{$doc['nama_berkas']}}
+                <a href="{{asset('storage/doc/'.$doc['alamat_berkas'])}}"><span class="badge badge-warning badge-pill">Unduh</span></a>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                Surat Pernyataan Wali Santri
-                <span class="badge badge-warning badge-pill">Unduh</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                Surat Ijab Qabul
-                <a href="https://www.google.com/search?q=surat+pernyataan&oq=surat+pern&aqs=chrome.1.69i57j0i433j0j0i131i433j0i433l3j0l3.3294j0j7&sourceid=chrome&ie=UTF-8"><span class="badge badge-warning badge-pill">Unduh</span></a>
-                </li>
+                @empty
+                <span class="badge badge-warning">Santri Belum Unggah Dokumen</span>
+                @endforelse
+               
             </ul>
 
             <br>

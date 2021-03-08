@@ -8,17 +8,30 @@
                 </div>
                 
                 <div class="author-box-description">
-                  <h6>Informasi Santri:</h6>
-                    No Pendaftaran  : <a  class="text-danger mb-2">{{ $email}}</a> <br>
-                    Alamat          : <a  class="text-danger mb-2">{{ $email}}</a> <br>
-                    Jenis Kelamin   : <a  class="text-danger mb-2">{{ $email}}</a> <br>
-                    Tempat, Tanggal Lahir : <a  class="text-danger mb-2">{{ $email}}</a> <br>
-                    Email : <a  class="text-danger mb-2">{{ $email}}</a> <br>
-                    Email : <a  class="text-danger mb-2">{{ $email}}</a> <br>
-                    Email : <a  class="text-danger mb-2">{{ $email}}</a> <br>
-                    Alamat : <a  class="text-danger mb-2"> </a><br>
-                    Status Pendaftaran : <a  class="text-warning mb-2"> Menunggu Konfirmasi Admin </a><br>
-                       
+                 
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-md">
+                            <tbody>
+                              <tr>
+                                <td>No Pendaftaran</td>
+                                <td>{{$no_pendaftaran}}</td>
+                              </tr>
+                              <tr>
+                                <td>Nisn</td>
+                                <td>{{$nisn}}</td>
+                              </tr>
+                              <tr>
+                                <td>Asal Sekolah</td>
+                                <td>{{$sekolah_asal}}</td>
+                              </tr>
+                              <tr>
+                                <td>Alamat</td>
+                                <td>{{$alamat}}</td>
+                              </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                
                 
