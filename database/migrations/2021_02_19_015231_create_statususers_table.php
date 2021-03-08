@@ -13,7 +13,7 @@ class CreateStatususersTable extends Migration
      */
     public function up()
     {
-        Schema::create('statususers', function (Blueprint $table) {
+        Schema::create('statusdaftar', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users') ->onUpdate('cascade') ->onDelete('cascade');
             $table->string('status');

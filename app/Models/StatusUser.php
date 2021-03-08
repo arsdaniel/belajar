@@ -11,7 +11,7 @@ class StatusUser extends Model
     protected $table ='statususers';
     protected $fillable = [
         'user_id',
-        'status'
+        'status',
     ];
 
 

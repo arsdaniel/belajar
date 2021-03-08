@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Admin;
 
-use Facades\Str;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
 use App\Repositories\Admin\Interfaces\PostRepositoryInterface;
@@ -106,7 +106,7 @@ class PostRepository implements PostRepositoryInterface
         $postCode = Str::random(12);
 
         if (self::isCodeExists($postCode)) {
-            return generateOrderCode();
+            
         }
 
         return $postCode;
