@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Admin\Interfaces;
 
-interface TagRepositoryInterface
+interface DocRepositoryInterface
 {
     public function findList();
-    public function findById($tagId);
+    public function findById($DocId);
 }
