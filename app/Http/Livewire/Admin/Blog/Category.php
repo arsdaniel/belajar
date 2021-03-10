@@ -15,11 +15,13 @@ class Category extends Component
     private $categoryRepository;
     public $perPage= '10';
     public $data;
+    
 
-    public function __construct(CategoryRepositoryInterface $categoryRepository) //phpcs:ignore
+    public function mount(CategoryRepositoryInterface $categoryRepository) //phpcs:ignore
     {
-        parent::__construct();
+       
 
+        $this->data['currentAdminMenu'] = 'category';
         $this->categoryRepository = $categoryRepository;
     }
 
@@ -28,7 +30,7 @@ class Category extends Component
 
         $this->data['categories'] = $this->getCategories($request);
         $this->data['nestedCategories'] = $this->categoryRepository->findNestedList();
-        return view('livewire.admin.blog.category',$this->data)->layout('layouts.dashboard.app');
+        return view('livewire.admin.blog.category',$this->data);
     }
 
     private function getCategories($request = null)

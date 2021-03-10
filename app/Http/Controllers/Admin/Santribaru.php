@@ -8,9 +8,15 @@ use Illuminate\Http\Request;
 
 class Santribaru extends Controller
 {
+    public function __construct() //phpcs:ignore
+    {
+        parent::__construct();
+        $this->data['currentAdminMenu'] = 'santriBaru';
+       
+    }
     //
     public function index(){
-        return view('admin.santri.santribaru');
+        return view('admin.santri.santribaru', $this->data);
     }
     public function lihat($id)
     {

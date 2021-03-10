@@ -16,6 +16,10 @@ use App\Repositories\Admin\CategoryRepository;
 use App\Repositories\Admin\Interfaces\TagRepositoryInterface;
 use App\Repositories\Admin\TagRepository;
 
+use App\Repositories\Admin\Interfaces\SantriRepositoryInterface;
+use App\Repositories\Admin\SantriRepository;
+
+
 class AdminRepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -41,8 +45,28 @@ class AdminRepositoryServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            AdminRepositoryInterface::class,
+            AdminRepository::class
+        );
+
+        $this->app->bind(
+            BiodatawaliRepositoryInterface::class,
+            BiodatawaliRepository::class
+        );
+
+        $this->app->bind(
+            SantriRepositoryInterface::class,
+            SantriRepository::class
+        );
+
+        $this->app->bind(
             TagRepositoryInterface::class,
             TagRepository::class
+        );
+
+        $this->app->bind(
+            DocRepositoryInterface::class,
+            DocRepository::class
         );
     }
 
