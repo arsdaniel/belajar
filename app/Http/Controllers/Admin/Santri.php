@@ -22,7 +22,7 @@ class Santri extends Controller
     }
     public function lihat($id)
     {
-        $user = User::find($id);
-        return view('admin.santri.lihat', compact('user'));
+        $this->data['user'] = User::find($id);
+        return view('admin.santri.lihat', $this->data);
     }
 }

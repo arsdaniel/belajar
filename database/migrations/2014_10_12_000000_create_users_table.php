@@ -39,6 +39,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('status')->default('1');
+            $table->string('statusdaftar')->default('1');
             $table->string('sekolah')->nullable();
             $table->rememberToken();
             $table->timestamps();

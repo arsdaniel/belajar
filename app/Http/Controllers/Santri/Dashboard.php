@@ -11,9 +11,12 @@ class Dashboard extends Controller
     public function index()
     {
         $status = auth()->user()->status;
+        $statusdaftar = auth()->user()->statusdaftar;
+        
         return view('santri.dashboard', [
         
-            'status' => $status
+            'status' => $status,
+            'statusdaftar' => $statusdaftar,
         ]);
     }
 }

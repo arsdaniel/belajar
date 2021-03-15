@@ -27,10 +27,7 @@ class UserSeeder extends Seeder
             
         ]);
 
-        StatusUser::create([
-            'user_id' => $user['id'],
-            'status' => '1',
-        ]);
+        
 
         $user -> assignRole('santri');
         $user->givePermissionTo('santri-baru');
@@ -44,10 +41,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
-        StatusUser::create([
-            'user_id' => $user['id'],
-            'status' => '1',
-        ]);
+        
 
         $user -> assignRole('santri');
         $user->givePermissionTo('santri-baru');
