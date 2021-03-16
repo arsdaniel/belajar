@@ -57,8 +57,8 @@
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-coins"></i><span>Keuangan</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link {{ Request::routeIs('blog.Category') ? 'active' : '' }}" href="/admin">Biaya</a></li>
-            <li><a class="nav-link" href="/admin/blog/kategori">Update</a></li>
+            <li><a class="nav-link {{ Request::routeIs('blog.Category') ? 'active' : '' }}" href="/admin/biaya">Biaya</a></li>
+            <li><a class="nav-link" href="/admin/biaya/pendaftaran">Biaya Pendaftaran</a></li>
           </ul>
         </li>
 

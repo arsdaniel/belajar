@@ -1,4 +1,6 @@
 <?php return array (
+  'admin.biaya.index' => 'App\\Http\\Livewire\\Admin\\Biaya\\Index',
+  'admin.biayapendaftaran.index' => 'App\\Http\\Livewire\\Admin\\Biayapendaftaran\\Index',
   'admin.blog.category' => 'App\\Http\\Livewire\\Admin\\Blog\\Category',
   'admin.blog.post' => 'App\\Http\\Livewire\\Admin\\Blog\\Post',
   'admin.index' => 'App\\Http\\Livewire\\Admin\\Index',

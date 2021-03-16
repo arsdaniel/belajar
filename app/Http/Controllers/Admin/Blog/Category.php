@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin\Blog;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Admin\Interfaces\CategoryRepositoryInterface;
 use Illuminate\Http\Request;
 
 class Category extends Controller

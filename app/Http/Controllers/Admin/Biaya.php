@@ -14,4 +14,7 @@ class Biaya extends Controller
        
     }
     //
+    public function index(){
+        return view('admin.biaya.index', $this->data);
+    }
 }
