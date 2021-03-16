@@ -83,9 +83,11 @@ class Index extends Component
             'harga' => $this->harga,
 
         ]);
-
+        
+       
         $this->closeModal();
         $this->resetFields();
+        session()->flash('success', 'Data berhasil Disimpan');
     }
 
     public  function edit($id){

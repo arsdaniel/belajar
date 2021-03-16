@@ -80,7 +80,7 @@
         <script src="{{ asset('stisla/stisla/plugins/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
         <script src="{{ asset('stisla/stisla/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>
         <script src="{{ asset('stisla/stisla/plugins/select2/dist/js/select2.min.js') }}"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
         <!-- Template JS File -->
         <script src="{{ asset('stisla/stisla/assets/js/scripts.js') }}"></script>
         <script src="{{ asset('stisla/stisla/assets/js/custom.js') }}"></script>
