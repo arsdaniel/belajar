@@ -1,5 +1,11 @@
 <section class="section">
     <div class="section-header">
+        @if (session()->has('success'))
+      <script>
+          toastr.success("{{ Session::get('message') }}");
+      </script>
+    @endif
+            
         <h1>Manajemen Santri</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item"><a href="">Dashboard</a></div>
@@ -16,10 +22,13 @@
                     <div class="card-header">
                         <h4>Manjemen Blog Kategori</h4>
                     </div>
+                            
                     @if ($isModal)
                         @include('livewire.admin.biayapendaftaran.create')
                     @endif
-
+                    @if ($hapus)
+                    @include('livewire.admin.biayapendaftaran.delete')
+                @endif
                     <div class="card-body">
                         <div class="form-row">
                             <div class="form-group col-md-4">
@@ -52,12 +61,7 @@
                                         <td>
                                             <button wire:click='edit({{ $biaya->id }})' class="btn btn-sm btn-success"><i
                                                     class="far fa-edit"></i> Ubah </button>
-                                            <a href="{{ url('admin/blog/categories/' . $biaya->id) }}"
-                                                class="btn btn-sm btn-danger" onclick="
-                                                                event.preventDefault();
-                                                                if (confirm('Do you want to remove this?')) {
-                                                                    document.getElementById('delete-role-{{ $biaya->id }}').submit();
-                                                                }">
+                                            <button wire:click='confirmHapus({{ $biaya->id }})' class="btn btn-sm btn-danger">
                                                 <i class="far fa-trash-alt"></i> Hapus
                                             </a>
 

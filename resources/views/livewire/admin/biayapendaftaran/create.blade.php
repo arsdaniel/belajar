@@ -50,8 +50,8 @@
                 </form>
             </div>
             <div class="modal-footer bg-whitesmoke">
-                <button wire:click.prevent='store()' class="btn btn-primary btn-shadow" id="">Simpan</button>
-                <button wire:click='closeModal()' class="btn btn-warning btn-shadow" id="">Batal</button>
+                <button wire:click.prevent="store()" class="btn btn-primary btn-shadow" id="">Simpan</button>
+                <button wire:click="closeModal()" class="btn btn-warning btn-shadow" id="">Batal</button>
 
             </div>
 

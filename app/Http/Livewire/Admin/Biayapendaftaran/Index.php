@@ -11,6 +11,7 @@ class Index extends Component
     public $searchTerm;
     public $data;
     public $isModal = 0;
+    public $hapus = 0;
     public $nama_biaya, $tahun_ajaran, $sekolah, $harga, $biaya_id;
 
     protected $rules = [
@@ -101,10 +102,29 @@ class Index extends Component
         $this->openModal();
     }
 
+    public function confirmHapus($id){
+        $biaya = Biayapendaftaran::findOrFail($id);
+        $this->biaya_id = $id;
+        $this->nama_biaya = $biaya->nama_biaya;
+        $this->hapus = true;
+    }
+
+    public function batalHapus(){
+        $this->hapus = false;
+    }
+
 
 
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
+    }
+    public function delete($id)
+    {
+        $biaya = Biayapendaftaran::findOrFail($id);
+        $biaya->delete(); //LALU HAPUS DATA
+        $this->dispatchBrowserEvent(
+            'alert', ['type' => 'success',  'message' => 'Saved']);
+        $this->batalHapus();
     }
 }
