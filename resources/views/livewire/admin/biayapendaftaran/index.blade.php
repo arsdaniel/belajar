@@ -1,11 +1,12 @@
 <section class="section">
     <div class="section-header">
-        @if (session()->has('success'))
-      <script>
-          toastr.success("{{ Session::get('message') }}");
-      </script>
-    @endif
-            
+        @if ($isModal)
+        @include('livewire.admin.biayapendaftaran.create')
+        @endif
+        @if ($hapus)
+        @include('livewire.admin.biayapendaftaran.delete')
+        @endif
+        @include('component.notif')
         <h1>Manajemen Santri</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item"><a href="">Dashboard</a></div>
@@ -22,13 +23,9 @@
                     <div class="card-header">
                         <h4>Manjemen Blog Kategori</h4>
                     </div>
-                            
-                    @if ($isModal)
-                        @include('livewire.admin.biayapendaftaran.create')
-                    @endif
-                    @if ($hapus)
-                    @include('livewire.admin.biayapendaftaran.delete')
-                @endif
+                   
+                          
+                  
                     <div class="card-body">
                         <div class="form-row">
                             <div class="form-group col-md-4">
@@ -68,14 +65,16 @@
                                         </td>
                                     </tr>
                                 @empty
-
-                                @endforelse
+                                <tr> <td> Data masih kosong</td></tr>
+                                       
+                               
                             </tbody>
+                            @endforelse
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-       
+     
 </section>
 

@@ -123,8 +123,7 @@ class Index extends Component
     {
         $biaya = Biayapendaftaran::findOrFail($id);
         $biaya->delete(); //LALU HAPUS DATA
-        $this->dispatchBrowserEvent(
-            'alert', ['type' => 'success',  'message' => 'Saved']);
+        session()->flash('success', 'Data berhasil Dihapus');
         $this->batalHapus();
     }
 }
