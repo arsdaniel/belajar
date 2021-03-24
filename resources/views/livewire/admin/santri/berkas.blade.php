@@ -17,31 +17,33 @@
                
             </ul>
 
-            <br>
-
+            
+        @if ($statusDaftar == 4)
+        <br>
           <form wire:submit.prevent="savekonfirmasi" >
             
-                <div class="form-group col-md-12">
-                    <label for="konfirmasi"> <a  class="text-success mb-2">Konfirmasi Dokumen</a></label>
-                    <select id="konfirmasi"  wire:model.debounce.500ms="konfirmasi" name="" class="form-control @error('konfirmasi') is-invalid @enderror">
-                    <option value="" selected >Pilih...</option>
-                    <option value="1" >Terima</option>
-                        <option value="2">Tolak</option>
-                    </select>
-                    @error('sekolah_asal')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                    @enderror
-                
-                </div>
-
-                <div class="form-group col-md-12">
-                    
-                    <div class="text-md-right">
-                        <button  type="submit" class="btn btn-success">Konfirmasi</button>
-                    </div>
+            <div class="form-group col-md-12">
+                <label for="konfirmasi"> <a  class="text-success mb-2">Konfirmasi Dokumen</a></label>
+                <select id="konfirmasi"  wire:model.debounce.500ms="konfirmasi" name="" class="form-control @error('konfirmasi') is-invalid @enderror">
+                <option value="" selected >Pilih...</option>
+                <option value="1" >Terima</option>
+                    <option value="2">Tolak</option>
+                </select>
+                @error('sekolah_asal')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+            
             </div>
+
+            <div class="form-group col-md-12">
                 
-        </form>
+                <div class="text-md-right">
+                    <button  type="submit" class="btn btn-success">Konfirmasi</button>
+                </div>
+        </div>
+            
+    </form>
+        @endif
     </div>
       </div>
         

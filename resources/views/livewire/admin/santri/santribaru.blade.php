@@ -32,8 +32,10 @@
                             <div class="col-md-2">
                                 <select id="statussekolah" wire:model.debounce.500ms="statussekolah" class="form-control @error('statussekolah') is-invalid @enderror">
                                     <option value="" selected>Pilih...</option>
-                                    <option value="1">SD</option>
-                                    <option value="2">SMP</option>
+                                    <option value="1">SMP</option>
+                                    <option value="2">SMA</option>
+                                    <option value="3">MA</option>
+                                    <option value="4">MTs</option>
                                 </select>
 
                             </div>

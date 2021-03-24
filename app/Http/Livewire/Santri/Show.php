@@ -3,25 +3,17 @@
 namespace App\Http\Livewire\Santri;
 
 use App\Models\User;
-use App\Repositories\Admin\Interfaces\SantriRepositoryInterface;
 use Livewire\Component;
 use Livewire\WithPagination;
-use PhpParser\Node\Expr\FuncCall;
 
 class Show extends Component
 {
-    private $SantriRepository;
     public $searchTerm;
     public $paginate = '10';
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
-    public function mount(SantriRepositoryInterface $SantriRepository) //phpcs:ignore
-    {
-     
-        $this->SantriRepository = $SantriRepository;
-
-    }
+  
     public function render()
     {
         

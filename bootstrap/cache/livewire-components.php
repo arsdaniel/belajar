@@ -10,6 +10,7 @@
   'admin.santri.santribaru' => 'App\\Http\\Livewire\\Admin\\Santri\\Santribaru',
   'santri.biodata-santri' => 'App\\Http\\Livewire\\Santri\\BiodataSantri',
   'santri.index' => 'App\\Http\\Livewire\\Santri\\Index',
+  'santri.pembayaran' => 'App\\Http\\Livewire\\Santri\\Pembayaran',
   'santri.show' => 'App\\Http\\Livewire\\Santri\\Show',
   'santri.ubahdata' => 'App\\Http\\Livewire\\Santri\\Ubahdata',
   'santri.upload-doc' => 'App\\Http\\Livewire\\Santri\\UploadDoc',
