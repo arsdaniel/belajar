@@ -53,11 +53,10 @@ class Berkas extends Component
             ->where('sekolah', '1')
             ->get();
 
-        
+
         DB::beginTransaction();
 
-        try
-        {
+        try {
             $pembayaran = new Pembayaran;
             $pembayaran->no_pembayaran = getnoPembayaran();
             $pembayaran->user_id = $this->user_id;
@@ -74,13 +73,8 @@ class Berkas extends Component
                 ]);
             }
             DB::commit();
-        }
-        catch (Exception $e)
-        {
+        } catch (Exception $e) {
             DB::rollBack();
         }
-
     }
-
-    
 }
