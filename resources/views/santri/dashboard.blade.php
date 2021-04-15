@@ -6,7 +6,7 @@
         <livewire:santri.ubahdata />
     @elseif($statusdaftar == 2)
         <livewire:santri.upload-doc />
-    @elseif($                 
+    @elseif($statusdaftar == 3)                
     <section class="section">
         <div class="section-header">
           <h1>Profile</h1>

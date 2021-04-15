@@ -18,7 +18,7 @@
             </ul>
 
             
-        @if ($statusDaftar == 4)
+        @if ($statusDaftar == 1)
         <br>
           <form wire:submit.prevent="savekonfirmasi" >
             

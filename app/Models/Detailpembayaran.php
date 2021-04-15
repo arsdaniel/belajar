@@ -15,6 +15,6 @@ class Detailpembayaran extends Model
     ];
 
     public function Pembayaran(){
-        return $this->hasMany('App\Pembayaran');
+        return $this->belongsTo('App\Pembayaran');
     }
 }
